@@ -32,3 +32,33 @@ section {
 main section {
   border: 1px solid red;
 }
+
+.relevant-content section {
+  display: inline-block;
+  position: fixed;
+  width: 300px;
+  z-index: 1;
+  top: 200px;
+  left: 80px;
+  padding: 5px 0;
+  background: rgb(68, 68, 68);
+}
+
+.relevant-content section header h2 {
+  color: antiquewhite;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgb(145, 145, 145);
+}
+
+.relevant-content section ul {
+  float: inline-start;
+}
+
+.relevant-content section ul li {
+  display: block;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  list-style: none;
+  color: antiquewhite;
+  text-align: left;
+}
