@@ -10,41 +10,33 @@ main {
 }
 
 .main-header {
-  background: black;
-  border-bottom: 0.5px solid antiquewhite;
+  height: 60px;
 }
 
-.container {
-  position: relative;
-  width: 940px;
-  height: 80px;
-  margin: 0 auto;
+.navigation {
+  width: 100%;
+  position: fixed;
 }
 
-nav {
-  right: 0;
-  top: 15px;
-  position: absolute;
-  margin: 0 auto;
-}
-
-nav ul li {
-  display: inline-block;
-  color: aliceblue;
+.navigation ul {
+  margin: 0%;
   list-style: none;
-  margin: 0 0 0 40px;
+  background-color: black;
+}
+
+.navigation ul li {
+  display: inline-block;
+  color: antiquewhite;
+  padding: 20px;
 }
 
 .banner {
   width: 100%;
   height: 400px;
+  margin: 0;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-}
-
-main section {
-  border: 1px solid red;
 }
 
 .main-section {
@@ -52,6 +44,7 @@ main section {
   margin: 0 auto;
   text-align: left;
   background: rgb(27, 26, 26);
+  border: 1px solid rgb(27, 26, 26);
   color: antiquewhite;
 }
 
@@ -67,7 +60,7 @@ main section {
   position: fixed;
   width: 300px;
   z-index: 1;
-  top: 600px;
+  top: 500px;
   left: 80px;
   padding: 5px 0;
   background: rgb(68, 68, 68);
@@ -75,7 +68,9 @@ main section {
 
 .relevant-content section header h2 {
   color: antiquewhite;
-  padding-bottom: 8px;
+  text-align: center;
+  margin: 0;
+  padding: 10px;
   border-bottom: 1px solid rgb(145, 145, 145);
 }
 
