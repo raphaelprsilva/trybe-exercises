@@ -137,3 +137,8 @@ tr td:first-child {
   left: 5%;
   padding: 40px;
 }
+
+.stomatopoda-reference ul li a {
+  text-decoration: none;
+  font-size: 18px;
+}
