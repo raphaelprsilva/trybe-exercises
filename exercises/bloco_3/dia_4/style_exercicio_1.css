@@ -2,6 +2,13 @@ main {
   background: rgb(27, 26, 26);
 }
 
+.main-section p,
+.stomatopoda-reference ul li span {
+  letter-spacing: 1px;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
 .main-header {
   background: rgb(27, 26, 26);
   padding: 30px 0;
@@ -78,7 +85,9 @@ main section {
 }
 
 .about-stomatopoda,
-.stomatopoda-punch {
+.stomatopoda-punch,
+.stomatopoda-vision,
+.stomatopoda-reference {
   padding: 30px 0.5em 30px 0.5em;
 }
 
@@ -115,4 +124,16 @@ tr td:first-child {
   width: 350px;
   float: right;
   margin: 0 50px 50px 30px;
+}
+
+.stomatopoda-vision {
+  height: 880px;
+}
+
+.stomatopoda-vision .stomatopoda-general {
+  display: inline-block;
+  width: 80%;
+  position: relative;
+  left: 5%;
+  padding: 40px;
 }
