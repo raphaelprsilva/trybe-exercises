@@ -35,7 +35,7 @@ main section {
 .main-section {
   width: 950px;
   margin: 0 auto;
-  text-align: center;
+  text-align: left;
   background: rgb(27, 26, 26);
   color: antiquewhite;
 }
@@ -76,3 +76,34 @@ main section {
   color: antiquewhite;
   text-align: left;
 }
+
+.about-stomatopoda {
+  padding: 30px 0.5em 30px 0.5em;
+}
+
+.table-stomatopoda {
+  border-collapse: collapse;
+  border: 1px solid antiquewhite;
+  position: relative;
+  left: 25%;
+  width: 50%;
+}
+
+.table-stomatopoda tr {
+  border: 1px solid antiquewhite;
+}
+
+.table-stomatopoda td {
+  border: 1px solid antiquewhite;
+  text-align: center;
+  height: 30px;
+  padding: 5px;
+}
+
+tr td:first-child {
+  font-weight: bold;
+  color: rgb(233, 200, 17);
+}
+/* .table-stomatopoda tr {
+  border: 1px solid antiquewhite;
+} */
