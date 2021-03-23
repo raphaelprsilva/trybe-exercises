@@ -77,7 +77,8 @@ main section {
   text-align: left;
 }
 
-.about-stomatopoda {
+.about-stomatopoda,
+.stomatopoda-punch {
   padding: 30px 0.5em 30px 0.5em;
 }
 
@@ -104,6 +105,14 @@ tr td:first-child {
   font-weight: bold;
   color: rgb(233, 200, 17);
 }
-/* .table-stomatopoda tr {
-  border: 1px solid antiquewhite;
-} */
+
+.stomatopoda-punch {
+  height: 300px;
+}
+
+.stomatopoda-eyes {
+  display: inline-block;
+  width: 350px;
+  float: right;
+  margin: 0 50px 50px 30px;
+}
