@@ -1,4 +1,4 @@
-let peca = 'RAInh';
+let peca = 'RAINHA';
 let novaPeca = peca.toLowerCase();
 
 if (novaPeca === 'rei') {
