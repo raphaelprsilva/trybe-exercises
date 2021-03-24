@@ -1,0 +1,159 @@
+main {
+  background: rgb(27, 26, 26);
+}
+
+.main-section p,
+.stomatopoda-reference ul li span {
+  letter-spacing: 1px;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.main-header {
+  height: 60px;
+}
+
+.navigation {
+  width: 100%;
+  position: fixed;
+}
+
+.navigation ul {
+  margin: 0%;
+  list-style: none;
+  background-color: black;
+}
+
+.navigation ul li {
+  display: inline-block;
+  color: antiquewhite;
+  padding: 20px;
+}
+
+.banner {
+  width: 100%;
+  height: 400px;
+  margin: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.main-section {
+  width: 950px;
+  margin: 0 auto;
+  text-align: left;
+  background: rgb(27, 26, 26);
+  border: 1px solid rgb(27, 26, 26);
+  color: antiquewhite;
+}
+
+.main-section h1 {
+  font-size: 30px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  margin-bottom: 1px solid antiquewhite;
+}
+
+.relevant-content section {
+  display: inline-block;
+  position: fixed;
+  width: 300px;
+  z-index: 1;
+  top: 500px;
+  left: 80px;
+  padding: 5px 0;
+  background: rgb(68, 68, 68);
+}
+
+.relevant-content section header h2 {
+  color: antiquewhite;
+  text-align: center;
+  margin: 0;
+  padding: 10px;
+  border-bottom: 1px solid rgb(145, 145, 145);
+}
+
+.relevant-content section ul {
+  float: inline-start;
+}
+
+.relevant-content section ul li {
+  display: block;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  list-style: none;
+  color: antiquewhite;
+  text-align: left;
+}
+
+.about-stomatopoda,
+.stomatopoda-punch,
+.stomatopoda-vision,
+.stomatopoda-reference {
+  padding: 30px 0.5em 30px 0.5em;
+}
+
+.table-stomatopoda {
+  border-collapse: collapse;
+  border: 1px solid antiquewhite;
+  position: relative;
+  left: 25%;
+  width: 50%;
+}
+
+.table-stomatopoda tr {
+  border: 1px solid antiquewhite;
+}
+
+.table-stomatopoda td {
+  border: 1px solid antiquewhite;
+  text-align: center;
+  height: 30px;
+  padding: 5px;
+}
+
+tr td:first-child {
+  font-weight: bold;
+  color: rgb(233, 200, 17);
+}
+
+.stomatopoda-punch {
+  height: 300px;
+}
+
+.stomatopoda-eyes {
+  display: inline-block;
+  width: 350px;
+  float: right;
+  margin: 0 50px 50px 30px;
+}
+
+.stomatopoda-vision {
+  height: 880px;
+}
+
+.stomatopoda-vision .stomatopoda-general {
+  display: inline-block;
+  width: 80%;
+  position: relative;
+  left: 5%;
+  padding: 40px;
+}
+
+.stomatopoda-reference ul li a {
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.stomatopoda-footer {
+  background: black;
+  text-align: center;
+  padding: 30px;
+  border-top: 1px solid whitesmoke;
+}
+
+.stomatopoda-footer p,
+.stomatopoda-footer a {
+  color: whitesmoke;
+}
