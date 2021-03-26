@@ -17,4 +17,4 @@ let aux = '';
 for (let i = 0; i < m; i+=1) {
   aux = aux + ast;
   console.log(aux);
-  }
+}
