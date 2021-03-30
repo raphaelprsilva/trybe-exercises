@@ -2,7 +2,6 @@
 
 function largerAmountCharacters(newArray) {
 
-  let auxiliar = 1;
   let maxCharacters = '';
 
   for (let i = 0; i < newArray.length; i+= 1) {
