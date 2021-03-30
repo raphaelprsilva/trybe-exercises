@@ -12,4 +12,4 @@ function biggestNumber(testArray) {
   return biggestIndex;
 }
 
-console.log(biggestNumber([200, 3000, 5, 10000, 10]));
+console.log(biggestNumber([200, 10000, 5, 10000, 10]));
