@@ -11,3 +11,5 @@ centerElement[0].style.backgroundColor = "white";
 let auxiliar = document.querySelectorAll('p');
 auxiliar[0].style.textTransform = "uppercase";
 console.log(auxiliar);
+
+let varAux = document.querySelectorAll('p');
