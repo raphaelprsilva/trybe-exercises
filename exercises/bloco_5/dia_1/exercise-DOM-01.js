@@ -4,3 +4,6 @@ document.getElementsByTagName('p')[1].innerText = "Daqui a dois anos, eu desejo 
 
 let elements = document.getElementsByClassName('main-content');
 elements[0].style.backgroundColor = "rgb(76,164,109)";
+
+let centerElement = document.getElementsByClassName('center-content');
+centerElement[0].style.backgroundColor = "white";
