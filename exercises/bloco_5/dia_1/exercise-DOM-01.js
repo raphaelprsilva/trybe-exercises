@@ -7,3 +7,7 @@ elements[0].style.backgroundColor = "rgb(76,164,109)";
 
 let centerElement = document.getElementsByClassName('center-content');
 centerElement[0].style.backgroundColor = "white";
+
+let auxiliar = document.querySelectorAll('p');
+auxiliar[0].style.textTransform = "uppercase";
+console.log(auxiliar);
