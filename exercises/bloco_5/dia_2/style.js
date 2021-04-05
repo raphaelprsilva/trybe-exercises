@@ -14,3 +14,11 @@ let createDiv = document.createElement('div');
 createDiv.className = 'main-content';
 
 addTitle.appendChild(createDiv);
+
+// Adicione a tag div com a classe center-content como filho da tag div criada no passo 2
+let addNewDiv = document.querySelector('.main-content');
+
+let createNewDiv = document.createElement('div');
+createNewDiv.className = 'center-content';
+
+addNewDiv.appendChild(createNewDiv);
