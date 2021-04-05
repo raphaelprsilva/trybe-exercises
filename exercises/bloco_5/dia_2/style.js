@@ -22,3 +22,11 @@ let createNewDiv = document.createElement('div');
 createNewDiv.className = 'center-content';
 
 addNewDiv.appendChild(createNewDiv);
+
+// Adicione a tag p como filho do div criado no passo 3 e coloque algum texto
+let addTagP = document.querySelector('.center-content');
+
+let createTagP = document.createElement('p');
+createTagP.innerText = 'Creating a new tag <p> using querySelector, CreateElement and appendChild';
+
+addTagP.appendChild(createTagP);
