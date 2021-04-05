@@ -30,3 +30,15 @@ let createTagP = document.createElement('p');
 createTagP.innerText = 'Creating a new tag <p> using querySelector, CreateElement and appendChild';
 
 addTagP.appendChild(createTagP);
+
+// Adicione a tag div com a classe left-content como filho da tag div criada no passo 2
+let createThirdDiv = document.createElement('div');
+createThirdDiv.className = 'left-content';
+
+createDiv.appendChild(createThirdDiv);
+
+// Ex. 6 - Adicione a tag div com a classe right-content como filho da tag div criada no passo 2
+let createRightContent = document.createElement('div');
+createRightContent.className = 'right-content';
+
+createDiv.append(createRightContent);
