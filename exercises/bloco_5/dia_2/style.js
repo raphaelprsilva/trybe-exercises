@@ -40,7 +40,8 @@ createDiv.appendChild(createThirdDiv);
 // Ex. 6 - Adicione a tag div com a classe right-content como filho da tag div criada no passo 2
 let createRightContent = document.createElement('div');
 createRightContent.className = 'right-content';
-
+// Centralize o div criado no passo 6 (aquele que possui a classe right-content ). Dica: para centralizar, basta configurar o margin-right: auto do div
+createRightContent.style.marginRight = 'auto';
 createDiv.appendChild(createRightContent);
 
 // Ex. 7 - Adicione uma imagem com src configurado para o valor https://picsum.photos/200 e classe small-image . Esse elemento deve ser filho do div criado no passo 5
@@ -85,3 +86,5 @@ createTitle.className = 'title';
 let elementDiv = document.querySelectorAll('div')[2];
 createDiv.removeChild(elementDiv);
 console.log(elementDiv);
+
+
