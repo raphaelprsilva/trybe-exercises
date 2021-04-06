@@ -80,3 +80,8 @@ for (let index = 0; index < numOfTimes; index += 1) {
 
 // Ex. 1 - Adicione a classe title na tag h1 criada;
 createTitle.className = 'title';
+
+// Ex. 3 - Remova o div criado no passo 5 (aquele que possui a classe left-content ). Utilize a função .removeChild()
+let elementDiv = document.querySelectorAll('div')[2];
+createDiv.removeChild(elementDiv);
+console.log(elementDiv);
