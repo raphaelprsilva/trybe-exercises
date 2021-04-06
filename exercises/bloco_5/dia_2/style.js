@@ -48,3 +48,18 @@ let createImage = document.createElement('img');
 createImage.src = 'https://picsum.photos/200';
 createImage.className = 'small-image';
 createThirdDiv.appendChild(createImage);
+
+// Ex. 8 - Adicione uma lista não ordenada com os valores de 1 a 10 por extenso como valores da lista. Essa lista deve ser filha do div criado no passo 6
+let elementUl = document.createElement('ul');
+createRightContent.appendChild(elementUl);
+let elementsUlList = ['Um', 'Dois', 'Três', 'Quatro', 'Cinco', 'Seis', 'Sete', 'Oito', 'Nove', 'Dex'];
+
+
+for (let index = 0; index < elementsUlList.length; index += 1) {
+  let element = elementsUlList[index];
+  
+  let elementLi = document.createElement('li');
+  elementLi.innerText = element;
+  elementUl.appendChild(elementLi);
+}
+
