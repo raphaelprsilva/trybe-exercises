@@ -70,6 +70,9 @@ let numOfTimes = 3;
 for (let index = 0; index < numOfTimes; index += 1) {
   let elementH3 = document.createElement('h3');
   elementH3.innerHTML = 'Show' + index;
+
+  // Adicione a classe description nas 3 tags h3 criadas
+  elementH3.className = 'description';
   createDiv.appendChild(elementH3);
 }
 
