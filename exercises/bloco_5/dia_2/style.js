@@ -63,3 +63,12 @@ for (let index = 0; index < elementsUlList.length; index += 1) {
   elementUl.appendChild(elementLi);
 }
 
+// Ex. 9 - Adicione 3 tags h3 , todas sendo filhas do div criado no passo 2
+
+let numOfTimes = 3;
+
+for (let index = 0; index < numOfTimes; index += 1) {
+  let elementH3 = document.createElement('h3');
+  elementH3.innerHTML = 'Show' + index;
+  createDiv.appendChild(elementH3);
+}
