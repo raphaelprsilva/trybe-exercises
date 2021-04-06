@@ -72,3 +72,8 @@ for (let index = 0; index < numOfTimes; index += 1) {
   elementH3.innerHTML = 'Show' + index;
   createDiv.appendChild(elementH3);
 }
+
+// Parte 2
+
+// Ex. 1 - Adicione a classe title na tag h1 criada;
+createTitle.className = 'title';
