@@ -41,4 +41,10 @@ createDiv.appendChild(createThirdDiv);
 let createRightContent = document.createElement('div');
 createRightContent.className = 'right-content';
 
-createDiv.append(createRightContent);
+createDiv.appendChild(createRightContent);
+
+// Ex. 7 - Adicione uma imagem com src configurado para o valor https://picsum.photos/200 e classe small-image . Esse elemento deve ser filho do div criado no passo 5
+let createImage = document.createElement('img');
+createImage.src = 'https://picsum.photos/200';
+createImage.className = 'small-image';
+createThirdDiv.appendChild(createImage);
