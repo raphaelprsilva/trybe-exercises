@@ -90,3 +90,7 @@ console.log(elementDiv);
 // Troque a cor de fundo do elemento pai da div criada no passo 3 (aquela que possui a classe center-content ) para a cor verde
 let elementCenterContent = document.getElementsByClassName('center-content')[0];
 elementCenterContent.parentNode.style.backgroundColor = 'green';
+
+// Remova os dois últimos elementos ( nove e dez ) da lista criada no passo 8
+elementUl.lastChild.remove();
+elementUl.lastChild.remove();
