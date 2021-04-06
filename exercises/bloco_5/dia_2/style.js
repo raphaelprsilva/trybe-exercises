@@ -87,4 +87,6 @@ let elementDiv = document.querySelectorAll('div')[2];
 createDiv.removeChild(elementDiv);
 console.log(elementDiv);
 
-
+// Troque a cor de fundo do elemento pai da div criada no passo 3 (aquela que possui a classe center-content ) para a cor verde
+let elementCenterContent = document.getElementsByClassName('center-content')[0];
+elementCenterContent.parentNode.style.backgroundColor = 'green';
