@@ -44,3 +44,16 @@ function createMonthDays() {
 
 createMonthDays();
 
+
+
+function addButtonHoliday (strHoliday) {
+  let myTasks = document.querySelector('.buttons-container');
+  let inputHolidays = document.createElement('button');
+  let buttonID = 'btn-holiday'
+
+  inputHolidays.innerText = strHoliday;
+  inputHolidays.id = buttonID;
+  myTasks.appendChild(inputHolidays);
+};
+
+addButtonHoliday('Feriados');
