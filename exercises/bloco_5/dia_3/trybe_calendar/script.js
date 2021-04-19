@@ -57,3 +57,23 @@ function addButtonHoliday (strHoliday) {
 };
 
 addButtonHoliday('Feriados');
+
+
+function displayHolidays() {
+  let getButtonHoliday = document.querySelector('#btn-holiday');
+  let getAllHolidaysClass = document.querySelectorAll('.holiday'); //retorna um array, por isso preciso varrer todos os elementos com um for
+  let currentBackgroundColor = 'rgb(238,238,238)';
+  let setNewBackgroundColor = 'white';
+
+  getButtonHoliday.addEventListener('click', function() {
+    for(let index = 0; index < getAllHolidaysClass.length; index += 1) {
+      if (getAllHolidaysClass[index].style.backgroundColor === setNewBackgroundColor) {
+        getAllHolidaysClass[index].style.backgroundColor = currentBackgroundColor;
+      } else {
+        getAllHolidaysClass[index].style.backgroundColor = setNewBackgroundColor;
+      }
+    }
+  });
+}
+
+displayHolidays();
