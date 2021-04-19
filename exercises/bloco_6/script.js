@@ -2,6 +2,7 @@ const estados = document.querySelector('#estados');
 const dateElement = document.querySelector('#date');
 const submitButton = document.querySelector('#botao-enviar');
 const form = document.querySelector('form');
+const clearButton = document.querySelector('#botao-limpar');
 
 const arrayEstados = ['', 'Acre - AC', 'Alagoas - AL', 'Amapá - AP', 'Amazonas - AM', 'Bahia - BA',
   'Ceará - CE', 'Distrito - Federal - DF', 'Espírito Santo - ES', 'Goiás - GO', 'Maranhão - MA', 'Mato Grosso - MT', 
@@ -48,6 +49,10 @@ function checkDate() {
   }
 
 }
+
+clearButton.addEventListener('click', () => {
+  document.querySelector('form').reset();
+});
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();
