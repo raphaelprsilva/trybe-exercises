@@ -4,45 +4,109 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" 
+    rel="stylesheet" 
+    integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" 
+  crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
   <link rel="stylesheet" href="style.css">
   <title>Exercicio 1 - Form</title>
 </head>
 <body>
   <form>
-    <fieldset>
-      <legend>Dados Pessoais</legend>
-      <label for='name'>Nome</label>
-      <input type='text' required id='name' min='1' max='40'>
-      <label for='email'>E-mail</label>
-      <input type='email' required id='email' min='1' max='50'>
-      <label for='cpf'>CPF</label>
-      <input type='text' required id='cpf' min='1' max='11'>
-      <label for='endereco'>Endereço</label>
-      <input type='text' required id='endereco' min='1' max='200'>
-      <label for='cidade'>Cidade</label>
-      <input type='text' required id='cidade' min='1' max='28'>
-      <label for=''>Estado</label>
-      <select name='estados' id='estados' required></select>
-      <p>Selecione seu tipo de moradia</p>
-      <input type='radio' required name='moradia' id='casa'>
-      <label for='casa'>Casa</label>
-      <input type='radio' required name='moradia' id='apartamento'>
-      <label for='apartamento'>apartamento</label>
-    </fieldset>
-    <fieldset>
+    <div class="border p-3 mb-2 bg-light text-dark">
+      <h3>Dados Pessoais</h3>
+      <div class="row g-3">
+        <div class="col-md">
+          <div class='form-floating'>
+            <input type='text' class='form-control' required id='name' min='1' max='40' placeholder="Nome">
+            <label for='name' class='form-label'>Nome</label>
+          </div>
+        </div>
+        <div class="col-md">
+          <div class='form-floating'>
+            <input type='email' class='form-control' required id='email' min='1' max='50' placeholder='name@example.com'>
+            <label for='email' class='form-label'>E-mail</label>
+          </div>
+        </div>
+        <div class="col-md">
+          <div class='form-floating mb-3'>
+            <input type='text' class='form-control' required id='cpf' min='1' max='11' placeholder="CPF">
+            <label for='cpf' class='form-label'>CPF</label>
+          </div>
+        </div>
+      </div>
+      <div class="row g-3">
+        <div class="col-md">
+          <div class='form-floating mb-3'>
+            <input class='form-control' type='text' required id='endereco' min='1' max='200' placeholder="Endereço">
+            <label for='endereco' class='form-label'>Endereço</label>
+          </div>
+        </div>
+        <div class="col-md">
+          <div class='form-floating mb-3'>
+            <input type='text' class='form-control' required id='cidade' min='1' max='28' placeholder="Cidade">
+            <label for='cidade'  class='form-label'>Cidade</label>
+          </div>
+        </div>
+        <div class="col-md">
+          <div class='form-floating mb-3'>
+            <select class='form-select' name='estados' id='estados' required aria-label="Select State">
+            </select>
+            <label for='estados' class='form-label'>Estado</label>
+          </div>
+        </div>
+        <div class="col-md">
+          <div class='form-check form-check-inline'>
+            <h5>Selecione seu tipo de moradia</h5>
+            <input type='radio' class='form-check-input' required name='moradia' id='casa'>
+            <label for='casa' class='form-check-label'>Casa</label>
+          </div>
+          <div class='form-check form-check-inline'>
+            <input type='radio' class='form-check-input' required name='moradia' id='apartamento'>
+            <label for='apartamento' class='form-check-label'>Apartamento</label>
+          </div>
+        </div>
+      </div>
+      </div>
+    <fieldset class="border p-3 mb-2 bg-light text-dark">
       <legend>Dados do Último Emprego</legend>
-      <label for='resumo'>Resumo do Currículo</label>
-      <textarea name='resumo' required id='resumo' cols="60" rows="10"></textarea>
-      <label for='ultimo-cargo'>Cargo</label>
-      <input type='text' required id='ultimo-cargo' min='1' max='40'>
-      <label for=''>Descrição do Último Cargo</label>
-      <textarea name='descricao-ultimo-cargo' required id='descricao-ultimo-cargo' cols='60' rows='10'></textarea>
-      <label for='date'>Data de Início</label>
-      <input type='text' name='date' required id='date' placeholder='DD/MM/AAAA'>
+      <div class="row g-3">
+        <div class="col-md">
+          <div class="form-floating mb-3 col-md-8">
+            <input class='form-control' type='text' required id='ultimo-cargo' min='1' max='40' placeholder="Úlimo Cargo">
+            <label for='ultimo-cargo' class='form-label'>Último Cargo</label>
+          </div>
+        </div>
+        <div class="col-md">
+          <div class="form-floating mb-3 col-md-4">
+            <input type='text' class='form-control' name='date' required id='datepicker' placeholder='DD/MM/AAAA'>
+            <label for='date'>Data de Início</label>
+          </div>
+        </div>
+      </div>
+      <div class="row g-3">
+        <div class="col-md">
+          <div class="form-floating">
+            <textarea class='form-control' name='resumo' required id='resumo' style="height: 200px" placeholder="Deixe um resumo aqui"></textarea>
+            <label for='resumo'>Resumo do Currículo</label>
+          </div>
+        </div>
+        <div class="col-md">
+          <div class="form-floating">
+            <textarea class='form-control' name='descricao-ultimo-cargo' required id='descricao-ultimo-cargo' style="height: 200px" placeholder="Deixe um resumo aqui"></textarea>
+            <label for=''>Descrição do Último Cargo</label>
+          </div>
+        </div>
+      </div>
     </fieldset>
-    <button type='submit' id='botao-enviar'>Enviar Formulário</button>
-    <button id='botao-limpar'>Limpar Campos</button>
+    <div class='d-grid gap-2 d-md-block'>
+      <button class='btn btn-primary' type='submit' id='botao-enviar'>Enviar Formulário</button>
+      <button class='btn btn-secondary' type='button' id='botao-limpar'>Limpar Campos</button>
+    </div>
   </form>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
