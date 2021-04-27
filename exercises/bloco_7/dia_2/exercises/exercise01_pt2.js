@@ -23,7 +23,7 @@ const lesson3 = {
 // a chave que deverá ser adicionada e o valor dela.
 
 const addProperties = (objectToModify, newKey, keyValue) => {
-  return objectToModify[newKey] = keyValue;
+  objectToModify[newKey] = keyValue;
 }
 
 addProperties(lesson2, 'turno', 'manhã');
