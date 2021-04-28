@@ -27,14 +27,10 @@ const joinLessons = Object.assign(allLessons, {lesson1, lesson2, lesson3});
 
 const studentsAmount = (obj) => {
   const keyNumStudents = Object.keys(joinLessons);
-  const studentLessonOne = Object.values(lesson1);
-  const studentLessonTwo = Object.values(lesson2);
-  const studentLessonThree = Object.values(lesson3);
-  //const sumOfStudents = studentLessonOne[1] + studentLessonTwo[1] + studentLessonThree[1];
 
   let sumOfStudents = 0;
   for (let index = 1; index <= keyNumStudents.length; index += 1) {
-    // sumOfStudents = `lesson${index}`['numeroEstudantes'];
+    // sumOfStudents = keyNumStudents[index]['numeroEstudantes'];
     console.log(keyNumStudents[index]['numeroEstudantes']);
   }
   // console.log(keyNumStudents);
