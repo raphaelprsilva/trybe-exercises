@@ -1,3 +1,4 @@
+// Soma de números em um array
 const numbers = [1, 2, 3];
 
 const sum = numbers.reduce((accumulator, item) => accumulator + item, 0);

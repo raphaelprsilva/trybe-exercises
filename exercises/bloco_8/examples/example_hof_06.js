@@ -18,4 +18,4 @@ const secondTravelerCities = [
 
 const commonCities = firstTravelerCities.filter(city => secondTravelerCities.includes(city));
 
-console.log(commonCities);
+console.table(commonCities);
