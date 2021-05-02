@@ -1,12 +1,14 @@
-const externalFunction = () => {
-  const book = 'Sapiens: Uma breve história da humanidade';
+// Closure
+// Toda função em JS é uma closure
 
-  const internalFunction = () => {
-    console.log(book.toUpperCase);
-  };
+const lexical = 'Oi léxico';
 
-  console.log(book);
-  console.log(internalFunction);
-};
+const safe = secret => ({
+  getSecret: () => secret,
+});
 
-externalFunction();
+const privateUserData = 'Dado privado';
+
+const obj = safe(privateUserData);
+
+console.log(obj.getSecret());
