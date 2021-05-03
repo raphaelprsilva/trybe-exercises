@@ -25,4 +25,13 @@ const ageFrequency = people.reduce((accumulator, { age }) => {
   return accumulator;
 }, {});
 
+/* 
+  Resultado esperado:
+
+  '- Jogo 1
+   - Jogo 2
+   - Jogo 3
+   - Jogo 4'
+*/
+
 console.log(ageFrequency);
