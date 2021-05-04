@@ -9,7 +9,7 @@ const evenNumber = numbers.filter(even, []);
 console.log(evenNumber);
 
 
-numbers.forEach((number, index) => {
+numbers.forEach((_, index) => {
   if (numbers[index] % 2 === 0) {
     console.log(numbers[index]);
   }
