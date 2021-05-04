@@ -107,4 +107,21 @@ result = people.reduce((accumulator, person) => {
 console.log(result);
 
 
-// find all over 
+// show true or false if all over 18 (see 'every' function)
+
+result = people.reduce((accumulator, person) => {
+  if (!accumulator) return false;
+  return person.age > 18;
+}, true);
+
+console.log(result);
+
+
+// show true or false if some is over 18 (see 'some' function)
+
+result = people.reduce((accumulator, person) => {
+  if (accumulator) return true;
+  return person.age > 18;
+}, false);
+
+console.log(result);

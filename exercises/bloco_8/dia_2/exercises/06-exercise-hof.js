@@ -63,13 +63,16 @@ const books = [
   },
 ];
 
-function smallerName() {
-  let nameBook = [];
-  
-  // return nameBook;
-  books.forEach(() => {});
+const expectedResult = true;
+
+// Faça uma função que retorne true , se algum livro
+// foi lançado na década de 80, e false , caso contrário.
+
+function someBookWasReleaseOnThe80s() {
+  const result = books.some(({ releaseYear }) => releaseYear > 1980 && releaseYear < 1989);
+  return result;
 }
 
+console.log(someBookWasReleaseOnThe80s());
 
-
-assert.strictEqual(smallerName(), 'Duna');
+assert.strictEqual(someBookWasReleaseOnThe80s(), expectedResult);

@@ -1,3 +1,6 @@
+// Faça uma função que retorne true , se todas as pessoas 
+// autoras nasceram no século XX, ou false , caso contrário.
+
 const assert = require('assert');
 
 const books = [
@@ -63,13 +66,14 @@ const books = [
   },
 ];
 
-function smallerName() {
-  let nameBook = [];
-  
-  // return nameBook;
-  books.forEach(() => {});
+const expectedResult = false;
+
+function everyoneWasBornOnSecXX() {
+  // 1º - verificar se o ano de nascimento do autor é no século XX (1901 à 2000)
+  const result = books.every(({ birthYear }) => birthYear > 1901);
+  return result;
 }
 
+console.log(everyoneWasBornOnSecXX());
 
-
-assert.strictEqual(smallerName(), 'Duna');
+assert.strictEqual(everyoneWasBornOnSecXX(), expectedResult);
