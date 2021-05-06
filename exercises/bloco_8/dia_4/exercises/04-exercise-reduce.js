@@ -77,10 +77,19 @@ const expectedResult = {
 
 function longestNamedBook() {
   return books.reduce((biggestBook, currentBook) => {
+    console.log(currentBook.name.length);
+    console.log(biggestBook.name.length);
     if (currentBook.name.length > biggestBook.name.length) return currentBook;
     return biggestBook;
   });
 }
+
+// Entendendo a lógica do exercício
+
+// 1ª iteração
+// biggestBook = undefined?
+// currentBook = object 1
+// if (26 > )
 
 console.log(longestNamedBook());
 
