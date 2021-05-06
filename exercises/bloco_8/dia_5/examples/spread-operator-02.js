@@ -10,3 +10,9 @@ const conhecimentosTrybe = {
   trabalho: true,
 };
 
+const pessoaTryber = {
+  ...pessoa,
+  ...conhecimentosTrybe,
+};
+
+console.log(pessoaTryber);
