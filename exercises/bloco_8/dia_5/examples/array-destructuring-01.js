@@ -16,9 +16,9 @@ console.log(fouthCountry);
 //--------------------------------------------------------
 // Com o array destructuring é possível fazer isso:
 let newCountries = ['Brazil', 'Germany', 'USA', 'Japan'];
-const [firstCountry, secondCountry, thirdCountry, fourthCountry] = countries;
+const [d, b, c, a] = newCountries;
 
-console.log(firstCountry);
-console.log(secondCountry);
-console.log(thirdCountry);
-console.log(fourthCountry);
+console.log(a);
+console.log(b);
+console.log(c);
+console.log(d);
