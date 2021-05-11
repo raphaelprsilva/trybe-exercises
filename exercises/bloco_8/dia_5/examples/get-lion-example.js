@@ -345,27 +345,35 @@ let animals = object.prices;
 
 // console.log(reference[0].residents)
 
+function getAnimalMap(options) {
+  const animals = object.species;
+  const animalsMap = {
+    NE: [],
+    NW: [],
+    SE: [],
+    SW: [],
+  };
 
-function increasePrices(percentage) {
-  const { prices } = object;
-  for (const key in prices) {
-    if (Object.hasOwnProperty(prices)) {
-      prices[key] *= (percentage / 100);
-    }
-  }
-  return prices;
+  animals.forEach((specie) => {
+    animalsMap[specie.location].push(specie.name);
+  });
+
+  const animalsMapKeys = Object.keys(animalsMap);
+  animalsMapKeys.forEach((current) => {
+    animalsMap[current]
+  });
+
+  const test = animals.reduce((accumulator, { location, name , residents }) => {
+    console.log(accumulator);
+    return {...accumulator, [name]: [residents[name]]}
+  }, {});
+
+  test
+
+  // return animalsMap;
 }
 
-console.log(increasePrices(50));
-
-
-
-const { prices } = object;
-  for (const key in prices) {
-    if (Object.hasOwnProperty(prices)) {
-      console.log(prices[key]);
-    }
-  }
+console.log(getAnimalMap({ includeNames: true }));
 
 
 
