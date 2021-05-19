@@ -1,21 +1,36 @@
-function myRemoveWithoutCopy(arr, item) {
-  for (let index = 0, len = arr.length; index < len; index += 1) {
-    if (arr[index] === item) {
-      arr.splice(index, 1);
-      index -= 1;
-      len -= 1;
-    }
-  }
+const { myRemoveWithoutCopy } = require('../removeWithoutCopy')
 
-  return arr;
-}
+describe('Testa a função myRemoveWithoutCopy' , () => {
+  it('myRemoveWithoutCopy is function', () => {
+    expect(typeof myRemoveWithoutCopy).toBe('function');
+  });
 
-// index = 1;
-// index = index - 1 = 1 - 1 = 0
-// len = len - 1 = 5 - 1 = 4
+  it('myRemoveWithoutCopy([1, 2, 3, 4], 3) retorna o [1, 2, 4]', () => {
+    const myArray = [1, 2, 3, 4];
+    const item = 3;
+    const receivedArray = [1, 2, 4];
+    expect(myRemoveWithoutCopy(myArray, item)).toEqual(receivedArray);
+  });
 
-console.log(myRemoveWithoutCopy([1, 2, 3, 4, 5], 2));
+  it('myRemoveWithoutCopy([1, 2, 3, 4], 3) não retorna [1, 2, 3, 4]', () => {
+    const myArray = [1, 2, 3, 4];
+    const item = 3;
+    const receivedArray = [1, 2, 3, 4];
+    expect(myRemoveWithoutCopy(myArray, item)).not.toEqual(receivedArray);
+  });
 
-module.exports = {
-  myRemoveWithoutCopy,
-};
+  it('Verifica se o array passado por parâmetro sofreu alterações', () => {
+    const myArray = [1, 2, 3, 4];
+    const item = 3;
+    myRemoveWithoutCopy(myArray, item);
+    const receivedArray = [1, 2, 3, 4];
+    expect(myArray).not.toEqual(receivedArray);
+  });
+
+  it('myRemoveWithoutCopy([1, 2, 3, 4], 5) retorna o array esperado', () => {
+    const myArray = [1, 2, 3, 4];
+    const item = 5;
+    const receivedArray = [1, 2, 3, 4];
+    expect(myRemoveWithoutCopy(myArray, item)).toEqual(receivedArray);
+  });
+});
