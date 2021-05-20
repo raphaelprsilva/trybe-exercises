@@ -5,17 +5,14 @@ const Animals = [
 ];
 
 const findAnimalByName = (name) => {
-  new Promise ((resolve, reject) => {
+  return new Promise((resolve, reject) => {
     setTimeout(() => {
-      const animals = Animals.find((animal) => {
-        return animal.name === name;
-      });
-      if (animals) {
-        return resolve(animals);
+      const animal = Animals.find((animal) => animal.name === name);
+      if (animal) {
+        return resolve(animal);
       }
       return reject('Nenhum animal com esse nome!');
     }, 300);
-
   });
 };
 
