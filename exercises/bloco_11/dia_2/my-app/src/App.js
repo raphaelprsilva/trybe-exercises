@@ -47,12 +47,6 @@ class App extends React.Component {
       <section>
         <Greeting name="Raphael" lastName="Silva"/>
         <UserProfile user={ joao } />
-        <Image
-          source="https://cdn.pixabay.com/photo/2017/02/20/18/03/cat-2083492_1280.jpg"
-          alternativeText="Cute cat staring"
-          width="300"
-          heigth="300"
-        />
         <Album album={ album01 } />
         <Album album={ album02 } />
       </section>
