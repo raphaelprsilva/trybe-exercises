@@ -1,0 +1,8 @@
+.user-profile {
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  padding: 12px 40px;
+  justify-content: center;
+  align-items: center;
+}
