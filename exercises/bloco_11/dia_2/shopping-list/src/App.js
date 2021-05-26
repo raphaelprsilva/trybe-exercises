@@ -1,25 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import Greeting from './Greeting';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  render() {
+
+    const shoppingList = ['leite', 'arroz', 'feijão', 'banana', 'carne'];
+    const items = shoppingList.map((item, index) => {
+      return (<li key={ index }>{ item }</li>);
+    });
+
+    return (
+      <div>
+        <h2>Lista de Compras</h2>
+        <ul>
+          { items }
+        </ul>
+        <Greeting name="Raphael" lastName="Silva" />
+      </div>
+    );
+  }
 }
 
 export default App;
