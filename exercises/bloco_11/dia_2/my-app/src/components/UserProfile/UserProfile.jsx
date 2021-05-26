@@ -1,10 +1,11 @@
 import React from 'react';
 import Image from '../Image';
+import './style.css';
 
 class UserProfile extends React.Component {
   render() {
     return (
-      <div>
+      <div className="user-profile">
         <p>Name: { this.props.user.name }</p>
         <p>E-mail: { this.props.user.email }</p>
         <Image
