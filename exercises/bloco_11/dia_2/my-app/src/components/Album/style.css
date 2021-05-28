@@ -1,0 +1,17 @@
+.album-item {
+  display: flex;
+  box-shadow: 0 0 4px rgba(243, 238, 238, 0.3);
+  color: rgb(206, 197, 214);
+  flex-direction: column;
+  padding: 12px 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+.album-item-card {
+  padding: 1em;
+  box-shadow: 0 0 4px rgba(243, 238, 238, 0.3);
+  border-radius: 0.5em;
+  justify-content: center;
+  background-color: rgb(102, 99, 99);
+}

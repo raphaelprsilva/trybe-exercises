@@ -1,0 +1,7 @@
+.greeting-item {
+  display: flex;
+  color: rgb(206, 197, 214);
+  box-shadow: 0 0 4px rgba(243, 238, 238, 0.3);
+  padding: 1.1em;
+  justify-content: center;
+}
