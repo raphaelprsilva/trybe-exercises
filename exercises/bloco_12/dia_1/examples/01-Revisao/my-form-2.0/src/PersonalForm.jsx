@@ -4,7 +4,7 @@ const states = ['Acre', 'Amapá', 'Amazonas', 'Distrito Federal', 'Espírito San
 
 class PersonalForm extends Component {
   render() {
-    const { handleChange } = this.props;
+    const { handleChange, onBlurHandler, currentState } = this.props;
     return (
       <fieldset>
         <legend>Informações Pessoais</legend>
@@ -13,7 +13,7 @@ class PersonalForm extends Component {
           Nome:
           <input
             type="text"
-            name="name"
+            name="nome"
             required
             onChange={ handleChange }
           />
@@ -58,7 +58,9 @@ class PersonalForm extends Component {
             type="text"
             name="cidade"
             required
+            value={ currentState.cidade }
             onChange={ handleChange }
+            onBlur ={ onBlurHandler }
           />
         </div>
 
