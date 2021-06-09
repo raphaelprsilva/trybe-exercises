@@ -20,7 +20,7 @@ class Form extends Component {
           onClick={ sendForm }
         />
         <input
-          type="button"
+          type="reset"
           value="Limpar"
           onClick={ resetForm }
         />
