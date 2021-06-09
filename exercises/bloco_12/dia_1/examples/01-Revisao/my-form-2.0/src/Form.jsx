@@ -1,32 +1,14 @@
 import React, { Component } from 'react';
-import Email from './Email';
-import Endereco from './Endereco';
-import Name from './Name';
+import PersonalForm from './PersonalForm';
 
 class Form extends Component {
-
   render() {
-    const { addressState, handleChange } = this.props;
+    const { handleChange } = this.props;
+
     return (
-      <div>
-        <form>
-          <fieldset>
-            <legend>Dados Pessoais</legend>
-            <Name
-              // value={ this.state.name }
-              handleChange={ handleChange }
-            />
-            <Email
-              // value={ this.state.email }
-              handleChange={ handleChange }
-            />
-            <Endereco
-              value= { addressState }
-              handleChange={ handleChange }
-            />
-          </fieldset>
-        </form>
-      </div>
+      <PersonalForm
+        handleChange={ handleChange }
+      />
     );
   }
 }
