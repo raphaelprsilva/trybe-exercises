@@ -4,10 +4,10 @@ import ProfessionalForm from './ProfessionalForm';
 
 class Form extends Component {
   render() {
-    const { handleChange, onBlurHandler, sendForm, currentState, resetForm } = this.props;
+    const { handleChange, onBlurHandler, sendForm, currentState, resetForm, handleSubmit } = this.props;
 
     return (
-      <form>
+      <form onSubmit={ handleSubmit }>
         <PersonalForm
           handleChange={ handleChange }
           onBlurHandler={ onBlurHandler }
@@ -15,7 +15,7 @@ class Form extends Component {
         />
         <ProfessionalForm handleChange={ handleChange } />
         <input
-          type="button"
+          type="submit"
           value="Enviar"
           onClick={ sendForm }
         />

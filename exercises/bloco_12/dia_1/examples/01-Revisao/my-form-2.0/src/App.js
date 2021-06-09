@@ -65,12 +65,18 @@ class App extends Component {
 
  sendForm = () => { this.setState({ enviado: true }) };
 
+ handleSubmit = (event) => {
+  alert('Formulário enviado!');
+  event.preventDefault();
+ };
+
   render() {
     const { enviado } = this.state;
 
     return (
       <main>
         <Form
+          handleSubmit={ this.handleSubmit }
           handleChange={ this.handleChange }
           onBlurHandler= { this.onBlurHandler }
           currentState={ this.state }
