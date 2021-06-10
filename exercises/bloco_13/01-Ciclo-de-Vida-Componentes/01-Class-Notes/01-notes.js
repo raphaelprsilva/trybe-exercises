@@ -25,4 +25,3 @@
     - Atualização -> componentShouldUpdate() -> componentDidUpdate()
     - Desmontagem -> componentWillUnmount
 */
-
