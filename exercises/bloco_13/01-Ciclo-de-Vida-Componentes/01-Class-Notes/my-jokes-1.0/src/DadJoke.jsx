@@ -45,7 +45,7 @@ class DadJoke extends Component {
         const requestReturn = await fetch('https://icanhazdadjoke.com', requestHeaders);
         const returnObject = await requestReturn.json();
         // Aqui ocorre a atualização do 'state', de maneira que 'jokeObj' vai receber
-        // o objeto da API, contendo a piada, e o 'state' será atualizado
+        // o objeto da API, contendo a piada, e o 'state' será atualizado.
         this.setState({
           // Obtive o resultado da requisição? Se sim, eu preciso setar o 'loading' como 'false'
           // pois, caso contrário, ele ficará como true, para sempre!
