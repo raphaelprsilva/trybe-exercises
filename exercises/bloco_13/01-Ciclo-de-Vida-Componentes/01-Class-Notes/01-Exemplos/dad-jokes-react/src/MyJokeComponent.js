@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import DadJoke from './DadJoke';
 
 export default class MyJokeComponent extends Component {
   constructor() {
@@ -13,7 +14,9 @@ export default class MyJokeComponent extends Component {
   render() {
 
     console.log('render');
-    return (<span>{this.state.piada}</span>);
+    return (
+      <DadJoke />
+    );
 
   }
 }
