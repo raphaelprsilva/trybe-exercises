@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.1.0/redux.min.js"
+      integrity="sha512-F21iSaHGX/3NFz5SuwoH6pGhTPxtoJoWWULqQVPQPtLm7nbK5r8vRSSSYy3Aj+H39cVrVm4+3ikGoVD1AjE0sQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <title>Redux Example</title>
+  </head>
+  <body>
+    <div>
+      Clicked <span id="value">0</span> times
+      <button id="increment">+</button>
+      <button id="decrement">-</button>
+      <button id="increment-10">Adiciona 10</button>
+    </div>
+    <script>
+      const INCREMENT = 'INCREMENT';
+      const DECREMENT = 'DECREMENT';
+
+      const reducer = (state = 0, action) => {
+        switch (action.type) {
+          case INCREMENT:
+            return state + action.payLoad.amount;
+          case DECREMENT:
+            return state - action.payLoad.amount;
+          default:
+            return state;
+        }
+      };
+
+      const store = Redux.createStore(
+        reducer,
+        // Comando para habilitar a extensão do redux
+        window.__REDUX_DEVTOOLS_EXTENSION__ &&
+          window.__REDUX_DEVTOOLS_EXTENSION__()
+      );
+
+      const handleClick = (queryElement, typeAction, amount) => {
+        const element = document.querySelector(queryElement);
+
+        return element.addEventListener('click', () => {
+          const handleAction = {
+            type: typeAction,
+            payLoad: {
+              amount: amount,
+            },
+          };
+
+          store.dispatch(handleAction);
+        });
+      };
+
+      handleClick('#increment', INCREMENT, 1);
+      handleClick('#decrement', DECREMENT, 1);
+      handleClick('#increment-10', INCREMENT, 10);
+
+      // o subscribe é como um eventListener.
+      // Toda vez que o estado glboal for alterado, a callback é chamada.
+      // Vamos inserir uma callback como parâmetro.
+      store.subscribe(() => {
+        document.querySelector('#value').innerHTML = store.getState();
+      });
+    </script>
+  </body>
+</html>
