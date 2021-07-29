@@ -37,6 +37,7 @@
       };
 
       const CHANGE_NAME_SURNAME_1 = 'CHANGE_NAME_SURNAME_1';
+      const CHANGE_NAME_SURNAME_2 = 'CHANGE_NAME_SURNAME_2';
 
       const meuPrimeiroReducer = (state = ESTADO_INICIAL_1, action) => {
         switch (action.type) {
@@ -53,6 +54,12 @@
 
       const meuSegundoReducer = (state = ESTADO_INICIAL_2, action) => {
         switch (action.type) {
+          case CHANGE_NAME_SURNAME_2:
+            return {
+              ...state,
+              nome: action.nome,
+              sobrenome: action.sobrenome,
+            };
           default:
             return state;
         }
@@ -78,14 +85,29 @@
       };
 
       window.onload = () => {
-        setTimeout(() => {}, 2000);
+        setTimeout(() => {
+          store.dispatch({
+            type: CHANGE_NAME_SURNAME_1,
+            nome: 'Raphael',
+            sobrenome: 'Silva',
+          });
+          store.dispatch({
+            type: CHANGE_NAME_SURNAME_2,
+            nome: 'Danielle',
+            sobrenome: 'dos Santos',
+          });
+        }, 2000);
       };
-      store.dispatch(changeNameSurnameAction);
+
       store.subscribe(() => {
-        const meuPrimeiroReducer = store.getState();
+        const { meuPrimeiroReducer, meuSegundoReducer } = store.getState();
         document.querySelector('#nome-1').innerHTML = meuPrimeiroReducer.nome;
         document.querySelector('#sobrenome-1').innerHTML =
           meuPrimeiroReducer.sobrenome;
+
+        document.querySelector('#nome-2').innerHTML = meuSegundoReducer.nome;
+        document.querySelector('#sobrenome-2').innerHTML =
+          meuSegundoReducer.sobrenome;
       });
     </script>
   </body>
