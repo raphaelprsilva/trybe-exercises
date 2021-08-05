@@ -93,12 +93,8 @@ Login.propTypes = {
   }).isRequired,
 };
 
-const mapStateToProps = (state) => ({
-  user: state.reducer.user,
-});
-
 const mapDispatchToProps = (dispatch) => ({
   loginUser: (infos) => dispatch(loginUserCreator(infos)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default connect(null, mapDispatchToProps)(Login);

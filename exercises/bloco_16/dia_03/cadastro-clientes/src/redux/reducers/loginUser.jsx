@@ -7,13 +7,10 @@ const INITIAL_STATE = {
   },
 };
 
-export const reducer = (state = INITIAL_STATE, action) => {
-  switch (action.state) {
+export const loginUser = (state = INITIAL_STATE, action) => {
+  switch (action.type) {
     case LOGIN_USER:
-      return {
-        ...state,
-        user: action.payload,
-      };
+      return { ...state, user: action.payload };
     default:
       return state;
   }
