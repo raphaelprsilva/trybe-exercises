@@ -3,6 +3,35 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 class Clients extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      ordened: false,
+    };
+
+    this.sortClientsByName = this.sortClientsByName.bind(this);
+  }
+
+  sortClientsByName = () => {
+    const { registerUsers } = this.props;
+    const ordened = [...registerUsers];
+    ordened.sort((a, b) => {
+      const nameA = a.name.toUpperCase();
+      const nameB = b.name.toUpperCase();
+
+      let comparison = 0;
+
+      if (nameA > nameB) {
+        comparison = 1;
+      } else if (nameA < nameB) {
+        comparison = -1;
+      }
+      return comparison;
+    });
+    return ordened;
+  }
+
   render() {
     const { user, registerUsers } = this.props;
     const { email } = user;
@@ -19,7 +48,15 @@ class Clients extends Component {
 
     return (
       <div>
-        <Link to="/registred-costumers">Cadastre outros</Link>
+        <Link to="/registred-costumers">
+          <button type="button">Cadastre outros</button>
+        </Link>
+        <button
+          type="button"
+          onClick={ () => this.setState((state) => ({ ordened: !state.ordened })) }
+        >
+          Ordenar Clientes
+        </button>
         <div>
           {
             registerUsers.map((user, index) => {
