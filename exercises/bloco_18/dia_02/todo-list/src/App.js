@@ -1,31 +1,21 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { useState } from 'react/cjs/react.development';
 import TodoInput from './components/TodoInput';
 import TodoList from './components/TodoList';
 
-export default class App extends Component {
-  constructor(props) {
-    super(props);
+function App() {
+  const [todos, setNewTodo] = useState([]);
 
-    this.state = {
-      todos: [],
-    };
+  const addTodo = (newTodo) => {
+    setNewTodo(todos.concat(newTodo));
+  };
 
-    this.addTodo = this.addTodo.bind(this);
-  }
-
-  addTodo(newTodo) {
-    this.setState((prevState) => ({
-      todos: prevState.todos.concat(newTodo),
-    }))
-  }
-
-  render() {
-    const { todos } = this.state;
-    return (
-      <div>
-        <TodoInput addTodo={ this.addTodo } />
-        <TodoList todos={ todos } />
-      </div>
-    )
-  }
+  return (
+    <div>
+      <TodoInput addTodo={ addTodo } />
+      <TodoList todos={ todos } />
+    </div>
+  );
 }
+
+export default App;
