@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import TodoContext from '../context/TodoContext';
 
-function TodoList({ todos }) {
+function TodoList() {
+  const { todos } = useContext(TodoContext);
   return (
     <ul>
       {
