@@ -1,0 +1,1 @@
+const encode = require('./encode.js');

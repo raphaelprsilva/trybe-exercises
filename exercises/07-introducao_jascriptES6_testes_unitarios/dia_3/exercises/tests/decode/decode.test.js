@@ -1,0 +1,1 @@
+const decode = require('./decode.js');
