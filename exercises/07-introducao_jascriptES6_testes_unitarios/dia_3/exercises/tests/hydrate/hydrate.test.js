@@ -1,3 +1,5 @@
+const hydrate = require('./hydrate.js');
+
 describe('Testa a função hydrate', () => {
   it('Testa se a função hydrate é definida', () => {
     expect(hydrate).toBeDefined();
