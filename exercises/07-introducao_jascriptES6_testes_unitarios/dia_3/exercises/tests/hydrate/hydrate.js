@@ -1,7 +1,6 @@
 const hydrate = (drinkText) => {
   const numberOfGlassesWater = drinkText
     .split('')
-    .sort()
     .map((item) => parseInt(item))
     .filter((item) => item)
     .reduce((acc, item) => acc + item, 0);
