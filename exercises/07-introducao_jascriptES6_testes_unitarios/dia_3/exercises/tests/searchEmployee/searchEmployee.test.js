@@ -36,4 +36,20 @@ describe('searchEmployee function tests', () => {
 
     expect(actual).toBe(expected);
   });
+
+  test('searchEmployee("1", "firstName") should throw an error', () => {
+    expect(() => searchEmployee('1', 'firstName')).toThrow();
+  });
+
+  test('searchEmployee("2", "lastName") should throw error message "ID não identificada"', () => {
+    expect(() => searchEmployee('2', 'lastName')).toThrowError(new Error('ID não identificada'));
+  });
+
+  test('searchEmployee("3", "firstName") should throw error message "ID não identificada"', () => {
+    expect(() => searchEmployee('3', 'firstName')).toThrowError(new Error('ID não identificada'));
+  });
+
+  test('searchEmployee("1256-4", "nonExistentDetail") should throw error message "Informação indisponível"', () => {
+    expect(() => searchEmployee('1256-4', 'nonExistentDetail')).toThrowError(new Error('Informação indisponível'));
+  })
 });

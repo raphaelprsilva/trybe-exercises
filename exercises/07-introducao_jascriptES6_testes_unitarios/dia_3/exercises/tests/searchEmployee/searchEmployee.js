@@ -38,15 +38,21 @@ const professionalBoard = [
 ];
 
 const searchEmployee = (id, details) => {
+  const [firstElementProfessionalBoard] = professionalBoard;
+  const firstElementProperties = Object.keys(firstElementProfessionalBoard);
+  const hasDetails = firstElementProperties
+    .find((properties) => properties === details);
+
   const professionalInfo = professionalBoard
     .find((professionalData) => professionalData.id === id);
 
+  if (!professionalInfo) throw new Error('ID não identificada');
+  if (!hasDetails) throw new Error ('Informação indisponível');
+
   const professionalDetails = professionalInfo[details];
-  const isProfessinalDetailsSpecialities = professionalDetails === 'specialities';
-  const hasProfessionalDetailsLengthGreaterThan1 = professionalDetails.length > 1;
-  return isProfessinalDetailsSpecialities && hasProfessionalDetailsLengthGreaterThan1
-    ? professionalDetails.reduce((acc, detail) => acc + `${detail}, `, '')
-    : professionalDetails.reduce((acc, detail) => acc + detail, '');
+  return details !== 'specialities'
+    ? professionalDetails
+    : professionalDetails.join(', ');
 };
 
 module.exports = searchEmployee;
