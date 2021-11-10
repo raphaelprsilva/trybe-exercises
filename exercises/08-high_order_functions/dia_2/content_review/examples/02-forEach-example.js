@@ -6,3 +6,10 @@ const multiplicationTable = (numbers, multiplicator) => numbers
   });
 
 multiplicationTable(numbers, 2);
+
+
+const names = ['Bianca', 'Camila', 'Fernando', 'Ana Roberta'];
+
+names.forEach((name, index) => names[index] = name.toUpperCase());
+
+console.log(names);
