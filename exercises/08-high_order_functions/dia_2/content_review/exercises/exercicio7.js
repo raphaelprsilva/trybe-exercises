@@ -70,7 +70,7 @@ const authorUnique = () => {
       return acc;
     }, []);
 
-  console.log(birthYears);
+  console.log('birthYears:', birthYears);
 
   return !birthYears
     .some((birthYear, index, arr) => {
