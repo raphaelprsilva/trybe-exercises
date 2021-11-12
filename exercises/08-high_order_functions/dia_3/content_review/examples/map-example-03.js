@@ -84,9 +84,9 @@ const getStudentGradeInfo = (studentName, studentsArray) => {
   const { materias } = student;
 
   return materias.map((materia) => (
-    `${materia.name}: ${materia.nota > 60 ? 'Aprovado' : 'Reprovado'}`
+    `${materia.name}: ${materia.nota >= 60 ? 'Aprovado' : 'Reprovado'}`
   ))
 }
 
 
-console.log(getStudentGradeInfo('Wilson', estudantes));
+console.log(getStudentGradeInfo('Natalia', estudantes));
