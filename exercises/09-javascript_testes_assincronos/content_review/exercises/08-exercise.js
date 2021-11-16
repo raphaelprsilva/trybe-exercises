@@ -32,7 +32,7 @@ function getPokemonDetails(filter, callback) {
 }
 
 getPokemonDetails(
-  (pokemon) => pokemon.name === 'asd',
+  (pokemon) => pokemon.name === 'Charmander',
   (error, message) => {
     if (error) {
       console.log(error);
