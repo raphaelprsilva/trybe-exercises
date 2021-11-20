@@ -1,13 +1,13 @@
-import './App.css';
+import React from 'react';
+import HelloWorld from './HelloWorld';
 
-function App() {
-  const element = (
-  <div>
-    <div> Hello World!</div>
-    <h2>It is {new Date().toLocaleTimeString()}.</h2>
-  </div>
-  );
-  return (element);
+class ReactClass extends React.Component {
+  render() {
+    return (
+      <HelloWorld />
+    );
+  }
 }
 
-export default App;
+export default ReactClass;
+
