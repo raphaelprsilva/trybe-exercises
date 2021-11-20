@@ -1,0 +1,11 @@
+.Header {
+  background-color: darkslategray;
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem 0.3rem;
+}
+
+.Header-title {
+  color: aliceblue;
+  font-size: larger;
+}
