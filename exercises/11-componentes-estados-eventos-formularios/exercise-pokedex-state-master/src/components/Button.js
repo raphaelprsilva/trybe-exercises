@@ -10,9 +10,10 @@ class Button extends Component {
   // }
 
   render() {
-    const { name } = this.props;
+    const { name, onNextPokemon } = this.props;
+
     return (
-      <button>
+      <button onClick={onNextPokemon}>
         {name}
       </button>
     )
