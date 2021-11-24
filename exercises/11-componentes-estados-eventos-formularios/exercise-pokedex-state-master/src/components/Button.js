@@ -1,14 +1,6 @@
 import React, { Component } from 'react';
 
 class Button extends Component {
-  // constructor () {
-  //   super();
-
-  //   this.state = {
-
-  //   };
-  // }
-
   render() {
     const { name, onNextPokemon } = this.props;
 
