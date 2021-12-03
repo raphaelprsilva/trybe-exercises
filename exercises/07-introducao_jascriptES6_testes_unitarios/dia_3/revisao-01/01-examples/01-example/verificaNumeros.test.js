@@ -16,7 +16,12 @@ describe('Check function checkNumbersAtArray', () => {
     expect(checkNumbersAtArray(['1', 2, 3])).toBe(false);
   });
 
-  // test('checkNumbersAtArray() should throw an error', () => {
+  test('checkNumbersAtArray() should throw an error', () => {
+    expect(() => checkNumbersAtArray()).toThrow(Error);
+  })
 
-  // })
+  test('checkNumbersAtArray() should return an error message: "Passar o array corretamente!"', () => {
+    const errorMessage = 'Passar o array corretamente!';
+    expect(() => checkNumbersAtArray()).toThrowError(errorMessage);
+  })
 });
