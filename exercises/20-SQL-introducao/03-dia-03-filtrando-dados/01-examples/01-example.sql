@@ -58,3 +58,11 @@ WHERE
     active IS FALSE AND store_id = 1;
 
 -- 6. Precisamos descobrir quais são os 50 filmes feitos apenas para adultos com a `menor` taxa de aluguel, para que possamos fazer uma divulgação melhor desses filmes. Em caso de empate, ordene em `ordem alfabética` pelo título. As informações podem ser encontradas na tabela `film`
+SELECT 
+    *
+FROM
+    sakila.film
+WHERE
+    rating = 'NC-17'
+ORDER BY rental_rate , title
+LIMIT 50;
