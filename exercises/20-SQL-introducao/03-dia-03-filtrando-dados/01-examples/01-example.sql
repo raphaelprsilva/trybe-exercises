@@ -9,7 +9,12 @@ NC-17 = permitido apenas para adultos
 **/
 
 -- 1. Precisamos identificar os dados do cliente com o e-mail `LEONARD.SCHOFIELD@sakilacustomer.org` . As informações podem ser encontradas na tabela `customer`
-
+SELECT 
+    *
+FROM
+    sakila.customer
+WHERE
+    email = 'EONARD.SCHOFIELD@sakilacustomer.org';
 
 -- 2. Precisamos de um relatório dos nomes dos clientes, em `ordem alfabética` , que não estão mais ativos no nosso sistema e pertencem à loja com o **id = 2** , e não inclua o cliente `KENNETH` no resultado. As informações podem ser encontradas na tabela `customer`
 
