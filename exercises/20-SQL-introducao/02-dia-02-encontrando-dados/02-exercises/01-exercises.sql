@@ -20,6 +20,11 @@ FROM
     Scientists.Projects;
 
 -- Escreva uma query para exibir o nome dos cientistas em ordem alfabética.
+SELECT 
+    Name
+FROM
+    Scientists.Scientists
+ORDER BY Name;
 
 -- Escreva uma query para exibir o nome dos Projetos em ordem alfabética descendente.
 
