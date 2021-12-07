@@ -39,6 +39,11 @@ WHERE
     title LIKE '_c%';
 
 -- Encontra qualquer resultado em que o título possui exatamente 8 caracteres
-
+SELECT 
+    *
+FROM
+    sakila.film
+WHERE
+    title LIKE '________';
 
 -- Encontra todas as palavras com no mínimo 3 caracteres e que iniciam com E
