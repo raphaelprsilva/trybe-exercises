@@ -27,6 +27,11 @@ FROM
 ORDER BY Name;
 
 -- Escreva uma query para exibir o nome dos Projetos em ordem alfabética descendente.
+SELECT 
+    Name
+FROM
+    Scientists.Projects
+ORDER BY Name DESC;
 
 -- Escreva uma query que exiba a string "O projeto Name precisou de Hours horas para ser concluído." para cada projeto.
 
