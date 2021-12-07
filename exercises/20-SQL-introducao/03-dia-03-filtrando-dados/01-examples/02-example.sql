@@ -15,7 +15,12 @@ WHERE
     title LIKE 'plu%';
 
 -- Encontra qualquer resultado que contém "plu"
-
+SELECT 
+    *
+FROM
+    sakila.film
+WHERE
+    title LIKE '%plu%';
 
 -- Encontra qualquer resultado que inicia com "p" e finaliza com "r"
 
