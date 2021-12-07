@@ -47,3 +47,9 @@ WHERE
     title LIKE '________';
 
 -- Encontra todas as palavras com no mínimo 3 caracteres e que iniciam com E
+SELECT 
+    *
+FROM
+    sakila.film
+WHERE
+    title LIKE 'E__%';
