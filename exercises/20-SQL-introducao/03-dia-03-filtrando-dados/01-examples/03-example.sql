@@ -24,10 +24,21 @@ WHERE
         AND title LIKE '%lord';
 
 -- 4. Mostre os dois casos em que, a partir do 4° caractere no título do filme, tem-se a palavra `gon` .
-
+SELECT 
+    *
+FROM
+    sakila.film
+WHERE
+    title LIKE '___gon%';
 
 -- 5. Mostre o único caso em que, a partir do 4° caractere no título do filme, tem-se a palavra `gon` e a descrição contém a palavra `Documentary` .
-
+SELECT 
+    *
+FROM
+    sakila.film
+WHERE
+    title LIKE '___gon%'
+        AND description LIKE '%Documentary%';
 
 -- 6. Mostre os dois filmes cujos títulos ou finalizam com `academy` ou iniciam com `mosquito` .
 
