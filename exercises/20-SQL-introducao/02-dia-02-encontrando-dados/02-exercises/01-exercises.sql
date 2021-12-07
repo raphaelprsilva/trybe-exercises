@@ -34,6 +34,15 @@ FROM
 ORDER BY Name DESC;
 
 -- Escreva uma query que exiba a string "O projeto Name precisou de Hours horas para ser concluído." para cada projeto.
+SELECT 
+    CONCAT('O Projeto ',
+            Name,
+            ' precisou de ',
+            Hours,
+            ' para ser concluído.')
+	AS 'Horas gastas do Projeto'
+FROM
+    Scientists.Projects;
 
 -- Escreva uma query para exibir o nome e as horas dos três projetos com a maior quantidade de horas.
 
