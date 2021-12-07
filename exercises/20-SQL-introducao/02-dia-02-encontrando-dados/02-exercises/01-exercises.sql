@@ -8,6 +8,7 @@ SELECT 1 AS num1, 2 AS num2, 3 AS num3;
 SELECT 10 + 15 AS 'soma de 10 + 15';
 
 -- Escreva uma query para exibir o resultado de uma expressão aritmética qualquer.
+SELECT 10 * 34 AS `Multiplicação de 10 * 34`;
 
 -- Escreva uma query para exibir todas as informações de todos os cientistas.
 
