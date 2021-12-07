@@ -14,6 +14,10 @@ SELECT 10 * 34 AS `Multiplicação de 10 * 34`;
 SELECT * FROM Scientists.Scientists;
 
 -- Escreva uma query para exibir o nome como "Nome do Projeto" e as horas como "Tempo de Trabalho" de cada projeto.
+SELECT 
+    Name, Hours AS `Tempo de Trabalho`
+FROM
+    Scientists.Projects;
 
 -- Escreva uma query para exibir o nome dos cientistas em ordem alfabética.
 
