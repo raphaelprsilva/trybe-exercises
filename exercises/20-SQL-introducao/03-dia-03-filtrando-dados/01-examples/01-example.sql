@@ -50,6 +50,11 @@ WHERE
     active IS TRUE AND store_id = 1;
 
 -- 5. Mostre todos os detalhes dos clientes que `não` estão ativos na loja `1` . As informações podem ser encontradas na tabela `customer`
-
+SELECT 
+    *
+FROM
+    sakila.customer
+WHERE
+    active IS FALSE AND store_id = 1;
 
 -- 6. Precisamos descobrir quais são os 50 filmes feitos apenas para adultos com a `menor` taxa de aluguel, para que possamos fazer uma divulgação melhor desses filmes. Em caso de empate, ordene em `ordem alfabética` pelo título. As informações podem ser encontradas na tabela `film`
