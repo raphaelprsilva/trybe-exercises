@@ -42,7 +42,12 @@ ORDER BY replacement_cost DESC, title
 LIMIT 100;
 
 -- 4. Quantos clientes estão `ativos` e na loja `1` ? As informações podem ser encontradas na tabela `customer`
-
+SELECT 
+    COUNT(*)
+FROM
+    sakila.customer
+WHERE
+    active IS TRUE AND store_id = 1;
 
 -- 5. Mostre todos os detalhes dos clientes que `não` estão ativos na loja `1` . As informações podem ser encontradas na tabela `customer`
 
