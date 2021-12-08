@@ -13,7 +13,13 @@ WHERE
 ORDER BY first_name;
 
 -- 2. Mostre o e-mail dos clientes com os `address_id 172, 173, 174, 175 e 176` , ordenados em ordem alfabética.
-
+SELECT 
+    email
+FROM
+    sakila.customer
+WHERE
+    address_id IN (172 , 173, 174, 175, 176)
+ORDER BY email;
 
 -- 3. Descubra quantos pagamentos foram feitos entre `01/05/2005` e `01/08/2005` . Lembre-se de que, no banco de dados, as datas estão armazenadas no formato `ano/mês/dia` , diferente do formato brasileiro, que é `dia/mês/ano` .
 
