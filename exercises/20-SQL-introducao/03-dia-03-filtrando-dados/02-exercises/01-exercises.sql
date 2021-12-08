@@ -33,7 +33,12 @@ WHERE
 ORDER BY name;
 
 -- 05. Escreva uma query para exibir o número de empresas (fornecedores) que contém a letra F no código.
-
+SELECT 
+    COUNT(*) AS empresas_com_f_no_code
+FROM
+    PecasFornecedores.Fornecedores
+WHERE
+    code LIKE '%f%';
 
 -- 06. Escreva uma query para exibir os fornecimentos onde as peças custam mais de R$15,00 e menos de $40,00 . Ordene os resultados por ordem crescente.
 
