@@ -26,3 +26,11 @@ FROM
 WHERE
     length BETWEEN 50 AND 120
 ORDER BY length;
+
+SELECT 
+    *
+FROM
+    sakila.language
+WHERE
+    name BETWEEN 'Italian' AND 'Mandarin'
+ORDER BY name;
