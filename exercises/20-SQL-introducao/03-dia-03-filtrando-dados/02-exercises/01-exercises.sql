@@ -16,7 +16,12 @@ WHERE
 ORDER BY Fornecedor;
 
 -- 03. Escreva uma query para exibir as peças, preço e fornecedor de todos os fornecimentos em que o código do fornecedor tenha a letra N .
-
+SELECT 
+    peca, Preco, Fornecedor
+FROM
+    PecasFornecedores.Fornecimentos
+WHERE
+    Fornecedor LIKE '%N%';
 
 -- 04. Escreva uma query para exibir todas as informações dos fornecedores que são empresas limitadas (LTDA). Ordene os resultados em ordem alfabética decrescente.
 
