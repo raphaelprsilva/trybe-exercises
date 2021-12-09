@@ -8,7 +8,7 @@ SELECT LCASE(title) FROM sakila.film LIMIT 10;
 SELECT REPLACE(title, 'ACADEMY', 'TESTE') FROM sakila.film WHERE film_id = 1;
 
 -- Example 04
-
+SELECT LEFT(title, 7) FROM sakila.film WHERE film_id = 1;
 
 -- Example 05
 
