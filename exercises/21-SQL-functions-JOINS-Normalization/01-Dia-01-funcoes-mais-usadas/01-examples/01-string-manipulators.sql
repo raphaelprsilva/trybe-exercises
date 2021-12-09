@@ -21,7 +21,7 @@ SELECT LENGTH('Oi, eu sou uma string');
 
 -- Extrai parte de uma string de acordo com o índice de um caractere inicial
 -- e a quantidade de caracteres a extrair
-
+SELECT SUBSTRING('Oi, eu sou uma string', 5, 2);
 
 -- Se a quantidade de caracteres a extrair não for definida,
 -- então a string será extraída do índice inicial definido, até o seu final
