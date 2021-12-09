@@ -16,7 +16,8 @@ SELECT LEFT('Oi, eu sou uma string', 3);
 SELECT RIGHT('Oi, eu sou uma string', 6);
 
 -- Exibe o tamanho, em caracteres, da string, a função LENGTH retorna o tamanho em bytes
-
+SELECT CHAR_LENGTH('Oi, eu sou uma string');
+SELECT LENGTH('Oi, eu sou uma string');
 
 -- Extrai parte de uma string de acordo com o índice de um caractere inicial
 -- e a quantidade de caracteres a extrair
