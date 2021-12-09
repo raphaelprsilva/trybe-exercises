@@ -5,7 +5,7 @@ SELECT UCASE('Oi, eu sou uma string');
 SELECT LCASE('Oi, eu sou uma string');
 
 -- Substitui as ocorrências de uma substring em uma string
-
+SELECT REPLACE('Oi, eu sou uma string', 'string', 'cadeia de caracteres');
 
 -- Retorna a parte da esquerda de uma string de acordo com o
 -- número de caracteres especificado
