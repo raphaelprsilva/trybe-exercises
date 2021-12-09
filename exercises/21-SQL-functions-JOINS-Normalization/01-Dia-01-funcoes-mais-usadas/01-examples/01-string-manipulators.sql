@@ -25,4 +25,4 @@ SELECT SUBSTRING('Oi, eu sou uma string', 5, 2);
 
 -- Se a quantidade de caracteres a extrair não for definida,
 -- então a string será extraída do índice inicial definido, até o seu final
-
+SELECT SUBSTRING('Oi, eu sou uma string', 5);
