@@ -2,7 +2,7 @@
 SELECT UCASE('Oi, eu sou uma string');
 
 -- Converte o texto da string para caixa baixa
-
+SELECT LCASE('Oi, eu sou uma string');
 
 -- Substitui as ocorrências de uma substring em uma string
 
