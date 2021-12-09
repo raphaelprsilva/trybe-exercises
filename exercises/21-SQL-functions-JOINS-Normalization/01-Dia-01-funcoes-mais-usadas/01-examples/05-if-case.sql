@@ -3,7 +3,14 @@
 -- em que deve-se avaliar se o nome do filme é ' ACE GOLDFINGER '.
 -- Caso seja, exiba "Já assisti a esse filme". Caso contrário, exiba "Não conheço o filme".
 -- Não esqueça de usar um alias para renomear a coluna da condicional.
-
+SELECT 
+    film_id,
+    title,
+    IF(title = 'ACE GOLDFINGER',
+        'Já assisti a esse filme',
+        'Não conheço o filme') AS 'conheço o filme?'
+FROM
+    sakila.film;
 
 -- 2. Usando o CASE na tabela sakila.film , exiba o título , a classificação indicativa ( rating )
 -- e uma coluna extra que vamos chamar de 'público-alvo' , em que classificaremos o filme de acordo com as seguintes siglas:
