@@ -13,7 +13,7 @@ SELECT LEFT('Oi, eu sou uma string', 3);
 
 -- Retorna a parte da direita de uma string de acordo com o
 -- número de caracteres especificado
-
+SELECT RIGHT('Oi, eu sou uma string', 6);
 
 -- Exibe o tamanho, em caracteres, da string, a função LENGTH retorna o tamanho em bytes
 
