@@ -9,7 +9,7 @@ SELECT REPLACE('Oi, eu sou uma string', 'string', 'cadeia de caracteres');
 
 -- Retorna a parte da esquerda de uma string de acordo com o
 -- número de caracteres especificado
-
+SELECT LEFT('Oi, eu sou uma string', 3);
 
 -- Retorna a parte da direita de uma string de acordo com o
 -- número de caracteres especificado
