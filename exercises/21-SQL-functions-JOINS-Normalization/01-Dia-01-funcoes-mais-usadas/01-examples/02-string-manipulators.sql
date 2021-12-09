@@ -5,7 +5,7 @@ SELECT UCASE(title) FROM sakila.film LIMIT 10;
 SELECT LCASE(title) FROM sakila.film LIMIT 10;
 
 -- Example 03
-
+SELECT REPLACE(title, 'ACADEMY', 'TESTE') FROM sakila.film WHERE film_id = 1;
 
 -- Example 04
 
