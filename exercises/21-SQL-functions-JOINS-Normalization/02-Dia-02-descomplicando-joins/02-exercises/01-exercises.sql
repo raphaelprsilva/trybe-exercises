@@ -16,7 +16,11 @@ WHERE BO.domestic_sales < BO.international_sales;
 
 -- Exercício 3: Utilizando o INNER JOIN , faça uma busca que retorne os filmes
 -- e sua avaliação ( rating ) em ordem decrescente.
-
+SELECT M.title, BO.rating
+FROM Pixar.Movies AS M
+INNER JOIN Pixar.BoxOffice AS BO
+ON M.id = BO.movie_id
+ORDER BY BO.rating DESC;
 
 -- Exercício 4: Utilizando o LEFT JOIN , faça uma busca que retorne todos os
 -- dados dos cinemas, mesmo os que não possuem filmes em cartaz e,
