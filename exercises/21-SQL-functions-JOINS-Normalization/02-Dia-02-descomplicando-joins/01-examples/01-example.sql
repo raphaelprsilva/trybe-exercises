@@ -1,6 +1,9 @@
 -- 1. Monte uma query que exiba o id do ator , nome do ator e id do
 -- filme em que ele já atuou usando as tabelas `actor` e `film_actor`
-
+SELECT actor.actor_id, actor.first_name, film.film_id
+FROM sakila.actor AS actor
+INNER JOIN sakila.film_actor AS film
+ON actor.actor_id = film.actor_id;
 
 -- 2. Use o `JOIN` para exibir o nome , sobrenome e endereço de cada
 -- um dos funcionários do banco. Use as tabelas `staff` e `address`
