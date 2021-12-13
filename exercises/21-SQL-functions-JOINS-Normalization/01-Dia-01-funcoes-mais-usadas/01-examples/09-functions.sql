@@ -12,6 +12,10 @@ FROM
     sakila.film;
 
 -- - A duração máxima dos filmes como 'Duração Máxima';
+SELECT 
+    MAX(length) AS 'Duração Máxima'
+FROM
+    sakila.film;
 
 -- - A soma de todas as durações como 'Tempo de Exibição Total';
 
