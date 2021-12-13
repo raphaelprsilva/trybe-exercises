@@ -7,7 +7,10 @@ ON actor.actor_id = film.actor_id;
 
 -- 2. Use o `JOIN` para exibir o nome , sobrenome e endereço de cada
 -- um dos funcionários do banco. Use as tabelas `staff` e `address`
-
+SELECT staff.first_name, staff.last_name, address.address
+FROM sakila.staff AS staff
+INNER JOIN sakila.address AS address
+ON staff.address_id = address.address_id;
 
 -- 3. Exiba o id do cliente , nome e email dos primeiros 100
 -- clientes, ordenados pelo nome em ordem decrescente, juntamente com o id do
