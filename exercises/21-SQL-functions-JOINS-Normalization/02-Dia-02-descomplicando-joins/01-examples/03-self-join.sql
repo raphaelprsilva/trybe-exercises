@@ -9,4 +9,8 @@ ON EMP.employee_id = MAN.manager_id
 WHERE EMP.department_id <> MAN.department_id;
 
 -- 2. Exiba o Nome e a quantidade de pessoas lideradas de cada gerente.
-
+SELECT CONCAT(MANAGER.first_name, ' ', MANAGER.last_name) AS manager, COUNT(*)
+FROM hr.employees AS MANAGER
+INNER JOIN hr.employees AS EMPLOYEE
+ON EMPLOYEE.MANAGER_ID = MANAGER.MANAGER_ID
+GROUP BY MANAGER.EMPLOYEE_ID;
