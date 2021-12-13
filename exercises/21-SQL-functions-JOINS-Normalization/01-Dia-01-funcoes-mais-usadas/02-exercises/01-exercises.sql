@@ -110,6 +110,11 @@ FROM
 SELECT UCASE(FIRST_NAME) FROM hr.employees;
 
 -- 17: Escreva uma query que exiba o sobrenome e a data de contratação de todos os funcionário contratados em julho de 1987.
-
+SELECT 
+    FIRST_NAME, LAST_NAME, HIRE_DATE
+FROM
+    hr.employees
+WHERE
+    DATE(HIRE_DATE) = '1987-07-01';
 
 -- 18: Escreva uma query que exiba as seguintes informações de cada funcionário: `nome` , `sobrenome` , `tempo que trabalha na empresa (em dias)` .
