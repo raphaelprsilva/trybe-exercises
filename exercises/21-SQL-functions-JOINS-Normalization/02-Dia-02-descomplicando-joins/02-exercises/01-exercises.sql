@@ -26,7 +26,11 @@ ORDER BY BO.rating DESC;
 -- dados dos cinemas, mesmo os que não possuem filmes em cartaz e,
 -- adicionalmente, os dados dos filmes que estão em cartaz nestes cinemas.
 -- Retorne os nomes dos cinemas em ordem alfabética.
-
+SELECT T.name, T.location, M.title, M.director, M.year, M.length_minutes
+FROM Pixar.Theater AS T
+LEFT JOIN Pixar.Movies AS M
+ON T.id = M.id
+ORDER BY T.name;
 
 -- Exercício 5: Utilizando o RIGHT JOIN , faça uma busca que retorne todos os
 -- dados dos filmes, mesmo os que não estão em cartaz e, adicionalmente, os
