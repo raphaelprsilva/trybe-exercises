@@ -22,7 +22,6 @@ FROM
     hr.employees;
 
 -- 5. Escreva uma query que exiba quatro informações: o maior salário, o menor salário, a soma de todos os salários e a média dos salários. Todos os valores devem ser formatados para ter apenas duas casas decimais.
-SELECT * FROM hr.employees;
 SELECT 
     ROUND(MAX(SALARY), 2) AS max_salary,
     ROUND(MIN(SALARY), 2) AS min_salary,
@@ -32,7 +31,13 @@ FROM
     hr.employees;
 
 -- 6. Escreva uma query que exiba a quantidade de pessoas que trabalham como pessoas programadoras ( `IT_PROG` ).
-
+SELECT 
+    JOB_ID,
+    COUNT(*) AS PROG_EMPL
+FROM
+    hr.employees
+GROUP BY JOB_ID
+HAVING JOB_ID = 'IT_PROG';
 
 -- 7. Escreva uma query que exiba a quantidade de dinheiro necessária para efetuar o pagamento de cada profissão ( `JOB_ID` ).
 
