@@ -74,7 +74,11 @@ GROUP BY DEPARTMENT_ID
 HAVING EMPL_NUMBER > 10;
 
 -- 11. Escreva uma query que atualize a coluna `PHONE_NUMBER` , de modo que todos os telefones iniciados por `515` agora devem iniciar com `777` .
-
+UPDATE hr.employees 
+SET 
+    PHONE_NUMBER = REPLACE(PHONE_NUMBER, '515', '777')
+WHERE
+    PHONE_NUMBER LIKE '515%';
 
 -- 12. Escreva uma query que só exiba as informações dos funcionários cujo o primeiro nome tenha oito ou mais caracteres.
 
