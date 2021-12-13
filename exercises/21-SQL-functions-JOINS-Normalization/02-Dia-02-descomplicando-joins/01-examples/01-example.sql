@@ -51,7 +51,17 @@ WHERE
 -- 5. Exiba o nome e a quantidade de endereços dos clientes cadastrados. Ordene
 -- seus resultados por nomes de forma decrescente. Exiba somente os clientes
 -- ativos. As informações podem ser encontradas na tabela `address` e `customer`
-
+SELECT 
+    customer.first_name,
+    COUNT(address.address) AS quantidade_endereco
+FROM
+    sakila.customer AS customer
+        INNER JOIN
+    sakila.address AS address ON customer.address_id = customer.address_id
+WHERE
+    customer.active = 1
+GROUP BY customer.first_name
+ORDER BY customer.first_name DESC , customer.last_name DESC;
 
 -- 6. Monte uma query que exiba o nome , sobrenome e a média de valor
 -- ( `amount` ) paga aos funcionários no ano de 2006. Use as tabelas `payment`
