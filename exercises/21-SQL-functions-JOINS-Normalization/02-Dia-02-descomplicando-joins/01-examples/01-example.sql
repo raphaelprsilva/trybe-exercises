@@ -68,6 +68,15 @@ ORDER BY customer.first_name DESC , customer.last_name DESC;
 -- e `staff` . Os resultados devem estar agrupados pelo nome e sobrenome do
 -- funcionário.
 
+SELECT 
+    staff.first_name, staff.last_name, AVG(payment.amount) AS `Média de Pagamento`
+FROM
+    sakila.staff AS staff
+        INNER JOIN
+    sakila.payment AS payment ON staff.staff_id = payment.staff_id
+WHERE
+    YEAR(payment.payment_date) = 2006
+GROUP BY staff.staff_id;
 
 -- 7. Monte uma query que exiba o id do ator , nome , id do filme e título do
 -- filme , usando as tabelas `actor` , `film_actor` e `film` . Dica: você
