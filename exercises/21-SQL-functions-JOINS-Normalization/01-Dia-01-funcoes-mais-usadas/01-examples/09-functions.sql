@@ -24,3 +24,7 @@ FROM
     sakila.film;
 
 -- - E finalmente, a quantidade total de filmes cadastrados na tabela `sakila.film` como 'Filmes Registrados'.
+SELECT 
+    COUNT(film_id) AS 'Filmes Registrados'
+FROM
+    sakila.film;
