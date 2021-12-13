@@ -117,4 +117,10 @@ FROM
 WHERE
     DATE(HIRE_DATE) = '1987-07-01';
 
--- 18: Escreva uma query que exiba as seguintes informações de cada funcionário: `nome` , `sobrenome` , `tempo que trabalha na empresa (em dias)` .
+-- 18: Escreva uma query que exiba as seguintes informações de cada funcionário: `nome` , `sobrenome` , `tempo que trabalha na empresa (em anos)`
+SELECT 
+    FIRST_NAME,
+    LAST_NAME,
+    ROUND((DATEDIFF(CURRENT_DATE(), HIRE_DATE) / 365)) AS COMPANY_DATE
+FROM
+    hr.employees;
