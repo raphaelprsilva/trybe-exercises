@@ -1,9 +1,15 @@
 import React from 'react';
 
+import './App.css';
+import HelloWorld from './components/HelloWorld';
+
 class App extends React.Component {
   render() {
     return (
-      <h1>My first Component</h1>
+      <div>
+        <h1 className='HelloWorld'>My first Component</h1>
+        <HelloWorld />
+      </div>
     );
   }
 }
