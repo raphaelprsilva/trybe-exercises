@@ -1,0 +1,12 @@
+.footer {
+  align-items: center;
+  background-color: rgb(37, 37, 37);
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+}
+
+.footer h1 {
+  color: aliceblue;
+  font-size: medium;
+}
