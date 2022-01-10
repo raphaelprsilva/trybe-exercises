@@ -16,6 +16,7 @@ const handleNumbers = (num1, num2, num3) => {
   });
 };
 
+/*
 handleNumbers(1, 2, 3)
   .then((resolve) => console.log(resolve))
   .catch((error) => console.log(error));
@@ -27,6 +28,7 @@ handleNumbers(30, 20, 10)
 handleNumbers('1', 2, 3)
   .then((resolve) => console.log(resolve))
   .catch((error) => console.log(error));
+*/
 
 module.exports = {
   handleNumbers,
