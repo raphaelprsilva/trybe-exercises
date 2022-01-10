@@ -28,3 +28,6 @@ handleNumbers('1', 2, 3)
   .then((resolve) => console.log(resolve))
   .catch((error) => console.log(error));
 
+module.exports = {
+  handleNumbers,
+};
