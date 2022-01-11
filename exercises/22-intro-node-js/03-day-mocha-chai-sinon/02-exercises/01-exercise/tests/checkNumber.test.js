@@ -3,7 +3,7 @@ const {expect} = require('chai');
 const {checkNumber} = require('../checkNumber');
 
 describe('checkNumber function tests', () => {
-  it('Tests if checkNumber exists', () => {
+  it('Tests if checkNumber function exists', () => {
     expect(checkNumber).to.exist;
   });
 
@@ -11,21 +11,45 @@ describe('checkNumber function tests', () => {
     expect(checkNumber).to.be.a('function');
   });
 
-  it('Tests if checkNumber(4) returns "positivo"', () => {
-    const result = checkNumber(4);
+  describe('Test checkNumber function for positive results', () => {
+    it('checkNumber result should be a "string" type', () => {
+      const result = checkNumber(4);
 
-    expect(result).to.be.equal('positivo');
+      expect(result).to.be.a('string');
+    });
+
+    it('checkNumber(4) should return "positivo"', () => {
+      const result = checkNumber(4);
+
+      expect(result).to.be.equal('positivo');
+    });
   });
 
-  it('Tests if checkNumber(-4) returns "negativo"', () => {
-    const result = checkNumber(-4);
+  describe('Test checkNumber function for negative results', () => {
+    it('checkNumber result should be a "string" type', () => {
+      const result = checkNumber(-4);
 
-    expect(result).to.be.equal('negativo');
+      expect(result).to.be.a('string');
+    });
+
+    it('checkNumber(-4) should return "negativo"', () => {
+      const result = checkNumber(-4);
+
+      expect(result).to.be.equal('negativo');
+    });
   });
 
-  it('Tests if checkNumber(0) returns "neutro"', () => {
-    const result = checkNumber(0);
+  describe('Test checkNumber function for neutral results', () => {
+    it('checkNumber result should be a "string" type', () => {
+      const result = checkNumber(0);
 
-    expect(result).to.be.equal('neutro');
+      expect(result).to.be.a('string');
+    });
+
+    it('checkNumber(0) should return "neutro"', () => {
+      const result = checkNumber(0);
+
+      expect(result).to.be.equal('neutro');
+    });
   });
 });
