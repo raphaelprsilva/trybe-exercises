@@ -14,7 +14,7 @@ describe('checkNumber function tests', () => {
   it('Tests if checkNumber parameter type is a "number"', () => {
     const result = checkNumber('lalala');
 
-    expect(() => checkNumber('lalala')).to.throw(TypeError);
+    expect(result).to.be.equals('O valor deve ser um número.');
   });
 
   describe('Test checkNumber function for positive results', () => {
