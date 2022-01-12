@@ -1,5 +1,7 @@
 const checkNumber = (number) => {
-  if (typeof number !== 'number') throw TypeError('O valor deve ser um número');
+  if (typeof number !== 'number') {
+    return 'O valor deve ser um número.';
+  };
 
   const result = Math.sign(number);
   const isPositive = result === 1;
