@@ -10,9 +10,10 @@ const drinks = [
   { id: 6, name: "Água Mineral 500 ml", price: 5.0 },
 ];
 
-app.get("/drinks/:id", (req, res) => {
-  const { id } = req.params;
-  const drink = drinks.find((d) => d.id === parseInt(id));
+app.get("/drinks/:minPrice", (req, res) => {
+  console.log(req.params);
+  const { minPrice } = req.params;
+  const drink = drinks.filter((d) => d.price >= minPrice);
 
   if (!drink) return res.status(404).json({ message: "Drink not found!" });
 
