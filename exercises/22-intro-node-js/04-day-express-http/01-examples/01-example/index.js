@@ -28,6 +28,12 @@ app.get('/recipes/:id', (req, res) => {
   res.status(200).json(recipe);
 });
 
+app.get('/recipes', (_req, res) => {
+  if (!recipes) return res.status(204).json({ message: 'Recipes not found.' });
+
+  res.status(200).json(recipes);
+});
+
 app.post('/recipes', (req, res) => {
   const { id, name, price } = req.body;
   recipes.push({ id, name, price });
