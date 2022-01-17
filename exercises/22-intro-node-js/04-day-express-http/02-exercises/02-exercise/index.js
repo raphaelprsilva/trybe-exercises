@@ -29,6 +29,24 @@ app.get(
   })
 );
 
+app.post(
+  '/simpsons',
+  rescue(async (req, res) => {
+    const { id, name } = req.body;
+    const newSimspon = { id, name };
+    const simpsons = await getSimpsons();
+    const doesSimpsonExists = simpsons.find((s) => s.id === id);
+
+    if (doesSimpsonExists)
+      return res.status(409).json({ message: `id already exists!` });
+
+    simpsons.push(newSimspon);
+    await setSimpsons(simpsons);
+    console.log(simpsons);
+    res.status(204).end();
+  })
+);
+
 app.listen(3001, () => {
   console.log(`Escutando na porta 3001.`);
 });

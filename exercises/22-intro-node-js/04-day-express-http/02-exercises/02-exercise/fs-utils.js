@@ -14,7 +14,7 @@ const getSimpsons = async () => {
 
 const setSimpsons = async (newSimpsons) => {
   try {
-    return fs.readFile(simpsons, JSON.stringify(newSimpsons));
+    return fs.writeFile(simpsons, JSON.stringify(newSimpsons));
   } catch (error) {
     console.error(`${error.name}: ${error.message}`);
   }
