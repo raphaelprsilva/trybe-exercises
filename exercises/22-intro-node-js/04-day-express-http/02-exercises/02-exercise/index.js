@@ -8,14 +8,6 @@ const app = express();
 app.use(bodyParser.json());
 
 app.get(
-  '/simpsons',
-  rescue(async (_req, res) => {
-    const simpsons = await getSimpsons();
-    res.status(200).json(simpsons);
-  })
-);
-
-app.get(
   '/simpsons/:id',
   rescue(async (req, res) => {
     const { id } = req.params;
@@ -26,6 +18,14 @@ app.get(
       return res.status(404).json({ message: `Simpson not found.` });
 
     res.status(202).json(simpson);
+  })
+);
+
+app.get(
+  '/simpsons',
+  rescue(async (_req, res) => {
+    const simpsons = await getSimpsons();
+    res.status(200).json(simpsons);
   })
 );
 
