@@ -9,6 +9,10 @@ app.get('/open', (_req, res) => {
   res.send('open!');
 });
 
+app.get('/closed', authMiddleware, (req, res) => {
+  res.send('closed!');
+});
+
 const recipesRouter = require('./recipesRouter');
 
 app.use('/recipes', recipesRouter);
