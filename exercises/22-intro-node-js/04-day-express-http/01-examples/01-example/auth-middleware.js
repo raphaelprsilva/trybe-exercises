@@ -1,6 +1,6 @@
 const validUsers = [
   { username: 'MestreCuca', password: 'MinhaSenhaSuperSeguraSqn' },
-  { username: 'McRonald', password: 'Senha123Mudar' },
+  { username: 'McRonald', password: '123' },
   { username: 'Burger Queen', password: 'Senha123Mudar' },
   { username: 'UpWay', password: 'Senha123Mudar' },
 ];
