@@ -3,7 +3,7 @@ const app = express();
 const port = 3000;
 
 const Author = require('./models/Author');
-// const Book = require('./models/Book');
+const Book = require('./models/Book');
 
 app.get('/authors', async (_req, res) => {
   const authors = await Author.getAll();
@@ -20,10 +20,10 @@ app.get('/authors/:id', async (req, res) => {
   res.status(200).json(author);
 });
 
-// app.get('/books', async (req, res) => {
-//   const books = await Book.getAll();
+app.get('/books', async (req, res) => {
+  const books = await Book.getAll();
 
-//   res.status(200).json(books);
-// })
+  res.status(200).json(books);
+})
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
