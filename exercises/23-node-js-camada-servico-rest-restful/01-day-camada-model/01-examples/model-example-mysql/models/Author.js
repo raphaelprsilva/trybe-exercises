@@ -16,7 +16,7 @@ const getNewAuthor = ({ id, firstName, middleName, lastName }) => {
 const serialize = (authorData) => ({
   id: authorData.id,
   firstName: authorData.first_name,
-  middleNAme: authorData.middle_name,
+  middleName: authorData.middle_name,
   lastName: authorData.last_name,
 })
 
@@ -39,7 +39,21 @@ const findById = async (id) => {
   return getNewAuthor({ firstName, middleNAme, lastName });
 };
 
+const isValid = (firstName, middleName, lastName) => {
+  if (!firstName || typeof firstName !== 'string') return false;
+  if (!lastName || typeof lastName !== 'string') return false;
+  return true;
+};
+
+const create = async (firstName, middleName, lastName) => {
+  connection.execute('INSERT INTO model_example.authors (first_name, middle_name, last_name) VALUES (?, ?, ?)',
+  [firstName, middleName, lastName]
+  );
+}
+
 module.exports = {
   getAll,
   findById,
+  isValid,
+  create,
 };
