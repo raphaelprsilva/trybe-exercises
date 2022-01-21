@@ -1,6 +1,5 @@
 const connection = require('./connection');
 
-const BOOKS_QUERY = 'SELECT id, title, author_id FROM model_example.books';
 
 const serialize = (book) => ({
   id: book.id,
@@ -9,17 +8,21 @@ const serialize = (book) => ({
 });
 
 const getAllBooks = async () => {
+  const BOOKS_QUERY = 'SELECT id, title, author_id FROM model_example.books';
   const [books] = await connection.execute(BOOKS_QUERY);
   return books.map(serialize);
 };
 
 const getBooksByAuthorId = async (id) => {
-  const books = await getAllBooks();
-  const filteredBooks = books.filter(
-    ({ authorId }) => authorId === parseInt(id, 10)
-  );
+  const QUERY =
+    'SELECT id, title, author_id FROM model_example.books WHERE id=?';
+  const [book] = await connection.execute(QUERY, [id]);
 
-  return filteredBooks;
+  if (book.length === 0) return null;
+
+  const newBook = book.map(serialize);
+  const { title, authorId } = newBook;
+  return { id, title, authorId };
 };
 
 module.exports = {
