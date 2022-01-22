@@ -40,7 +40,20 @@ const getAuthorsById = async (id) => {
   return getAuthorsFullName({ id, firstName, middleName, lastName });
 };
 
+const isValidAuthor = async (firstName, middleName, lastName) => {
+  if (!firstName || typeof firstName !== 'string') return false;
+  if (!lastName || typeof lastName !== 'string') return false;
+  return true;
+};
+
+const setNewAuthor = async (firstName, middleName, lastName) => {
+  const QUERY = 'INSERT INTO model_example.authors (first_name, middle_name, last_name) VALUES (?, ?, ?)'
+  return connection.execute(QUERY, [firstName, middleName, lastName]);
+};
+
 module.exports = {
   getAllAuthors,
   getAuthorsById,
+  isValidAuthor,
+  setNewAuthor,
 };
