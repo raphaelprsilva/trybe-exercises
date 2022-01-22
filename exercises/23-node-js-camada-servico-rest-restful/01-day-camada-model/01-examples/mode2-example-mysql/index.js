@@ -9,7 +9,12 @@ const {
   setNewAuthor,
   isValidAuthor,
 } = require('./models/Author');
-const { getAllBooks, getBooksByAuthorId } = require('./models/Book');
+const {
+  getAllBooks,
+  getBooksByAuthorId,
+  setNewBook,
+  isAValidBook,
+} = require('./models/Book');
 
 const setJSONResMessage = (res, status, message) => res
   .status(status)
@@ -72,5 +77,17 @@ app.get(
     res.status(200).json(booksByAuthorId);
   }
 )
+
+app.post('/books', async (req, res) => {
+  const { title, author_id } = req.body;
+  const errorMessage = 'Was not possible create a new book';
+  const successMessage = 'Book successfully created';
+  const isValidBook = await isAValidBook(title, author_id);
+  console.log('isAValidBook:', isValidBook);
+  if (!isValidBook) return setJSONResMessage(res, 400, errorMessage);
+
+  await setNewBook(title, author_id);
+  setJSONResMessage(res, 201, successMessage);
+});
 
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
