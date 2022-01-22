@@ -13,15 +13,15 @@ const getAllBooks = async () => {
   return books.map(serialize);
 };
 
-const getBooksByAuthorId = async (id) => {
+const getBooksByAuthorId = async (bookId) => {
   const QUERY =
     'SELECT id, title, author_id FROM model_example.books WHERE id=?';
-  const [book] = await connection.execute(QUERY, [id]);
+  const [book] = await connection.execute(QUERY, [bookId]);
 
   if (book.length === 0) return null;
-
-  const newBook = book.map(serialize);
-  const { title, authorId } = newBook;
+  
+  const [newBook] = book.map(serialize);
+  const { id, title, authorId } = newBook;
   return { id, title, authorId };
 };
 
