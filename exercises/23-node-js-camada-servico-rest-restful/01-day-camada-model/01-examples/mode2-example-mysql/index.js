@@ -1,9 +1,21 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const app = express();
 const PORT = 3000;
 
-const { getAllAuthors, getAuthorsById } = require('./models/Author');
+const {
+  getAllAuthors,
+  getAuthorsById,
+  setNewAuthor,
+  isValidAuthor,
+} = require('./models/Author');
 const { getAllBooks, getBooksByAuthorId } = require('./models/Book');
+
+const setJSONResMessage = (res, status, message) => res
+  .status(status)
+  .json({ message });
+
+app.use(bodyParser.json());
 
 app.get('/authors',
   async (_req, res) => {
@@ -30,7 +42,22 @@ app.get(
     }
     res.status(200).json(authorById);
   }
-)
+);
+
+app.post(
+  '/authors',
+  async (req, res) => {
+    const { first_name, middle_name, last_name } = req.body;
+    const errorMessage = 'Was not possible create an author';
+    const successMessage = 'Author successfully created';
+    const isValidAuthorData = await isValidAuthor(first_name, middle_name, last_name);
+
+    if (!isValidAuthorData) return setJSONResMessage(res, 400, errorMessage);
+
+    await setNewAuthor(first_name, middle_name, last_name);
+    setJSONResMessage(res, 201, successMessage);
+  },
+);
 
 app.get(
   '/books/:id',
