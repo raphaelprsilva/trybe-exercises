@@ -39,7 +39,25 @@ const findById = async (id) => {
   return getNewAuthor(author);
 };
 
+const createAuthor = async (firstname, middleName, lastName) => {
+  const validAuthor = isValid(firstname, middleName, lastName);
+
+  if (!validAuthor) return false;
+
+  const [author] = await Author.createAuthor(firstname, middleName, lastName);
+
+  const authorId = author.insertedId;
+
+  return getNewAuthor({
+    id: authorId,
+    firstname,
+    middleName,
+    lastName,
+  })
+};
+
 module.exports = {
   getAll,
   findById,
+  createAuthor,
 };
