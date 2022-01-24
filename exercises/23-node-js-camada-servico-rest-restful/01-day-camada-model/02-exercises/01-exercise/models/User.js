@@ -25,13 +25,15 @@ const validateNewUser = ({ firstName, lastName, email, password }) => {
   return true;
 };
 
-const setNewUser = async ({ firstName, lastName, email, password }) => {
+const setNewUser = ({ firstName, lastName, email, password }) => {
   const QUERY =
     'INSERT INTO users_crud.users (first_name, last_name, email, password) VALUES(?, ?, ?, ?)';
-  // connection.execute(QUERY, [firstName, lastName, email, password])
-  console.log(
-    connection.execute(QUERY, [firstName, lastName, email, password])
-  );
+
+  console.log('Here, at setNewUser');
+
+  connection.execute(QUERY, [firstName, lastName, email, password])
+    .then(([result]) => ({ id: result.insertId, firstName, lastName, email }))
+
 };
 
 module.exports = {
