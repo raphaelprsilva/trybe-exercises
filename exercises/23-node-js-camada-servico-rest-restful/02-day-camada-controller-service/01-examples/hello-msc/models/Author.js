@@ -13,8 +13,10 @@ const serialize = (authorData) => authorData
   );
 
 // Busca todos os autores do banco.
-
+// A função retorna um array
 const getAll = async () => {
+  // O resultado de "await connection..." é um array com vários elementos
+  // Desconstruimos o resultado, para trazer apenas o primeiro item do array
   const [authors] = await connection.execute(
     'SELECT id, first_name, middle_name, last_name FROM model_example.authors;'
   );
@@ -41,6 +43,7 @@ const createAuthor = async (firstName, middleName, lastName) => {
     'INSERT INTO model_example.authors (first_name, middle_name, last_name) VALUES (?, ?, ?)',
     [firstName, middleName, lastName]
   );
+
   return { id: author.insertId, firstName, middleName, lastName };
 };
 
