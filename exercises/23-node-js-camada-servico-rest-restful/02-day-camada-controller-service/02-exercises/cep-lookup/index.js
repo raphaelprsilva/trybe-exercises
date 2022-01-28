@@ -12,6 +12,7 @@ app.get('/ping', async (_req, res) => {
 });
 
 app.get('/cep/:cep', CepController.findAddressByCep);
+app.post('/cep', CepController.createNewAddress);
 
 app.use(errorMiddleware);
 
