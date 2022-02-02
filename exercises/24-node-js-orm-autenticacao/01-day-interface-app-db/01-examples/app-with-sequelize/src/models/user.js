@@ -3,10 +3,6 @@ const User = (sequelize, DataTypes) => {
     fullName: DataTypes.STRING,
     email: DataTypes.STRING,
     phone_num: DataTypes.STRING,
-  },
-  {
-    // congela o nome da tabela
-    freezeTableName: true,
   });
 
   return User;
