@@ -2,6 +2,11 @@ const fs = require('fs').promises;
 
 const fileName = 'meu-arquivo.txt';
 
-fs.writeFile(fileName, 'My text')
-  .then(() => console.log('Arquivo escrito com sucesso!'))
-  .catch((err) => console.log(err));
+(async function () {
+  try {
+    await fs.writeFile(fileName, 'My new text 2', { flag: 'w' });
+    console.log('Text read successfully!');
+  } catch(err) {
+    console.log(err.message);
+  }
+})()
