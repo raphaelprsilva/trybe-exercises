@@ -1,0 +1,19 @@
+{
+  "name": "01-exercises-review",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "imc": "node imc.js",
+    "velocity": "node velocity.js",
+    "sorteio": "node sorteio.js",
+    "fatorial": "node fatorial.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}
