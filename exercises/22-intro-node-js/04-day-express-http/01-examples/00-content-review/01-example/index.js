@@ -1,6 +1,9 @@
 const chalk = require('chalk');
 const express = require('express');
+const bodyParser = require('body-parser');
+
 const app = express();
+app.use(bodyParser.json());
 
 const recipes = [
   { id: 1, name: 'Lasanha', price: 40.0, waitTime: 30 },
@@ -30,14 +33,6 @@ app.get('/recipes/search', (req, res) => {
   res.status(200).json(filteredRecipes);
 });
 
-app.get('/recipes', (_req, res) => {
-  // Converte a resposta em json
-  const sortedRecipes = recipes
-    .sort((recipe1, recipe2) => recipe1.name.localeCompare(recipe2.name));
-
-  res.json(sortedRecipes);
-});
-
 app.get('/recipes/:id', (req, res) => {
   const { id } = req.params;
   const foundRecipe = recipes.find((recipe) => recipe.id === parseInt(id, 10));
@@ -48,6 +43,23 @@ app.get('/recipes/:id', (req, res) => {
   }
 
   res.status(200).json(foundRecipe);
+});
+
+app.get('/recipes', (_req, res) => {
+  // Converte a resposta em json
+  const sortedRecipes = recipes
+    .sort((recipe1, recipe2) => recipe1.name.localeCompare(recipe2.name));
+
+  res.json(sortedRecipes);
+});
+
+app.post('/recipes', (req, res) => {
+  const { id, name, price, waitTime } = req.body;
+  recipes.push({ id, name, price, waitTime });
+  
+  console.log(chalk.blue.bold('recipes:'), recipes);
+  
+  res.status(200).json({ message: 'Recipe created successfuly!' });
 });
 
 app.get('/drinks/search', (req, res) => {
