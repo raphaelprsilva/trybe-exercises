@@ -16,6 +16,17 @@ app.post('/hello', (req, res) => {
   res.status(201).json({ message: `Hello ${name}!`});
 });
 
+// Exercício 03
+app.post('/greetings', (req, res) => {
+  const { name, age } = req.body;
+
+  if (age > 17) {
+    return res.status(200).json({ message: `Hello, ${name}!` });
+  }
+
+  res.status(401).end();
+});
+
 app.all('*', (req, res) => {
   res.status(404).json({ message: `Rota '${req.path}' não existe.` });
 });
