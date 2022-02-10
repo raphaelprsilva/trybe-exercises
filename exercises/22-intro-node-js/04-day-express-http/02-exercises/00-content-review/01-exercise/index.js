@@ -5,13 +5,18 @@ const app = express();
 
 app.use(bodyParser.json());
 
-app.all('*', (req, res) => {
-  res.status(404).json({ message: `Rota '${req.path}' não existe.`});
-});
-
 // Exercício 01
 app.get('/ping', (req, res) => {
   res.status(200).json({ message: 'pong' });
+});
+
+app.post('/hello', (req, res) => {
+  const { name } = req.body;
+  res.status(201).json({ message: `Hello ${name}!`});
+});
+
+app.all('*', (req, res) => {
+  res.status(404).json({ message: `Rota '${req.path}' não existe.` });
 });
 
 app.listen(3000, () => console.log('Listening on port 3000.'));
