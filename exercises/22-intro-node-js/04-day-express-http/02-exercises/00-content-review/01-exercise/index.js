@@ -5,6 +5,10 @@ const app = express();
 
 app.use(bodyParser.json());
 
+app.all('*', (req, res) => {
+  res.status(404).json({ message: `Rota '${req.path}' não existe.`});
+});
+
 // Exercício 01
 app.get('/ping', (req, res) => {
   res.status(200).json({ message: 'pong' });
