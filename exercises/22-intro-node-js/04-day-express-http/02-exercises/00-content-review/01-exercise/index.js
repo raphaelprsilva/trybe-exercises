@@ -6,10 +6,11 @@ const app = express();
 app.use(bodyParser.json());
 
 // Exercício 01
-app.get('/ping', (req, res) => {
+app.get('/ping', (_req, res) => {
   res.status(200).json({ message: 'pong' });
 });
 
+// Exercício 02
 app.post('/hello', (req, res) => {
   const { name } = req.body;
   res.status(201).json({ message: `Hello ${name}!`});
