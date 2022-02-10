@@ -27,6 +27,12 @@ app.post('/greetings', (req, res) => {
   res.status(401).end();
 });
 
+// Exercício 04
+app.put('/users/:name/:age', (req, res) => {
+  const { name, age } = req.params;
+  res.status(201).json({ message: `Seu nome é ${name} e você tem ${age} anos!` });
+});
+
 app.all('*', (req, res) => {
   res.status(404).json({ message: `Rota '${req.path}' não existe.` });
 });
