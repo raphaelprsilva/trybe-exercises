@@ -15,6 +15,16 @@ const getSimpsons = async () => {
   }
 };
 
+// Função para escrever os simpsons
+const setSimpsons = async (contentToAdd) => {
+  try {
+    await fs.writeFile('./simpsons.json', JSON.stringify(contentToAdd));
+  } catch(err) {
+    console.log(`Erro: ${err.message}`);
+  }
+};
+
 module.exports = {
   getSimpsons,
+  setSimpsons,
 }
