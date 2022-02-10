@@ -56,10 +56,30 @@ app.get('/recipes', (_req, res) => {
 app.post('/recipes', (req, res) => {
   const { id, name, price, waitTime } = req.body;
   recipes.push({ id, name, price, waitTime });
-  
+
   console.log(chalk.blue.bold('recipes:'), recipes);
   
   res.status(200).json({ message: 'Recipe created successfuly!' });
+});
+
+app.put('/recipes/:id', (req, res) => {
+  const { id } = req.params;
+  const { name, price } = req.body;
+  const recipeIndex = recipes.findIndex((recipe) => recipe.id === parseInt(id, 10));
+
+  console.log(chalk.blue.inverse('recipeIndex:'), recipeIndex);
+
+  if (recipeIndex === -1) {
+    return res.status(404).json({ message: 'Recipe not found.' });
+  }
+
+  console.log(chalk.blue.inverse('recipes before:'), recipes);
+
+  recipes[recipeIndex] = { ...recipes[recipeIndex], name, price };
+
+  console.log(chalk.blue.inverse('recipes after:'), recipes);
+
+  res.status(204).end();
 });
 
 app.get('/drinks/search', (req, res) => {
