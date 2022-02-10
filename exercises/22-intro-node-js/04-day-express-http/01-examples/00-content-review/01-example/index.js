@@ -2,6 +2,9 @@ const chalk = require('chalk');
 const express = require('express');
 const bodyParser = require('body-parser');
 
+const logBlue = (message, valueToLog) =>
+  console.log(chalk.blue.inverse(`${message}:`), valueToLog);
+
 const app = express();
 app.use(bodyParser.json());
 
@@ -81,6 +84,24 @@ app.put('/recipes/:id', (req, res) => {
 
   res.status(204).end();
 });
+
+app.delete('/recipes/:id', (req, res) => {
+  const { id } = req.params;
+  const recipesIndex = recipes.findIndex((recipe) => recipe.id === parseInt(id, 10));
+
+  if (recipesIndex === -1) {
+    return res.status(404).json({ message: 'Recipe not found.' });
+  }
+
+  logBlue('recipes before', recipes);
+
+  recipes.splice(recipesIndex, 1);
+
+  logBlue('recipes after', recipes);
+
+  res.status(204).end();
+});
+
 
 app.get('/drinks/search', (req, res) => {
   const { name, minPrice } = req.query;
