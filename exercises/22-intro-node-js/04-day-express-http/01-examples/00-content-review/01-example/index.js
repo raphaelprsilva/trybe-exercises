@@ -50,6 +50,18 @@ app.get('/recipes/:id', (req, res) => {
   res.status(200).json(foundRecipe);
 });
 
+app.get('/drinks/search', (req, res) => {
+  const { name, minPrice } = req.query;
+  const filteredDrinks = drinks.filter((drink) => drink.name.includes(name) && drink.price >= parseInt(minPrice));
+
+  if (!filteredDrinks) {
+    return res.status(404).json({ message: 'Not drinks found.' });
+  }
+
+  res.status(200).json(filteredDrinks);
+});
+
+
 app.get('/drinks', (_req, res) => {
   const sortedDrinks = drinks
     .sort((drink1, drink2) => drink1.name.localeCompare(drink2.name));
