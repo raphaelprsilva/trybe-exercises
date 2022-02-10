@@ -133,4 +133,8 @@ app.get('/drinks/:id', (req, res) => {
   res.status(200).json(foundDrink);
 });
 
+app.all('*', (req, res) => {
+  return res.status(404).json({ message: `Rota ${req.path} não existe!` });
+});
+
 app.listen(3000, () => console.log('Listening on port 3000'));
