@@ -1,3 +1,4 @@
+const chalk = require('chalk');
 const express = require('express');
 const app = express();
 
@@ -15,6 +16,19 @@ const drinks = [
   { id: 5, name: 'Cerveja Lata', price: 4.5 },
   { id: 6, name: 'Água Mineral 500 ml', price: 5.0 },
 ];
+
+app.get('/recipes/search', (req, res) => {
+  const { name } = req.query;
+  const filteredRecipes = recipes.filter((recipe) =>
+    recipe.name.includes(name)
+  );
+
+  if (!filteredRecipes) {
+    return res.status(404).json({ message: 'Recipe not found.' });
+  }
+
+  res.status(200).json(filteredRecipes);
+});
 
 app.get('/recipes', (_req, res) => {
   // Converte a resposta em json
