@@ -15,6 +15,7 @@
     "express-rescue": "^1.1.31"
   },
   "devDependencies": {
+    "chalk": "^2.4.1",
     "nodemon": "^2.0.15"
   }
 }
