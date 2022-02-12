@@ -10,6 +10,7 @@ app.post('/user', middlewares.isJoiError, middlewares.create); // Cria usuário
 app.get('/user', middlewares.getAll); // Busca todos os usuários
 app.get('/user/:id', middlewares.getById); // Busca por um usuário específico
 app.put('/user/:id', middlewares.isJoiError, middlewares.update); // Atualiza um usuário
+app.delete('/user/:id', middlewares.deleteUser);
 
 
 app.use(middlewares.getError);

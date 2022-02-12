@@ -2,7 +2,8 @@ const { isJoiError, create } = require('./createUser');
 const { getError } = require('./error');
 const { getAll } = require('./getAllUsers');
 const { getById } = require('./getById');
-const { update } = require('./UpdataUser');
+const { update } = require('./UpdateUser');
+const { deleteUser } = require('./deleteUser');
 
 module.exports = {
   isJoiError,
@@ -11,4 +12,5 @@ module.exports = {
   getAll,
   getById,
   update,
+  deleteUser,
 };

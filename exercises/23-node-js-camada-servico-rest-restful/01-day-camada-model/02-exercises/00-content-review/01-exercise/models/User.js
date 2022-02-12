@@ -58,10 +58,19 @@ const update = async (id, { firstName, lastName, email, password }) => {
   return getById(id);
 };
 
+const deleteUser = async (id) => {
+  const query = 'DELETE FROM users_crud.users WHERE id = ?';
+  const userToDelete = getById(id);
+  await connection.execute(query, [id]);
+
+  return userToDelete;
+};
+
 module.exports = {
   create,
   isValid,
   getAll,
   getById,
   update,
+  deleteUser,
 };
