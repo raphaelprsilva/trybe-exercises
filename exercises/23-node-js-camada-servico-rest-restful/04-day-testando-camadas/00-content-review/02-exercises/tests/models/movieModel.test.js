@@ -35,7 +35,7 @@ describe('Função "create" - Insere um novo filme no BD (models/movieModel).', 
   });
 });
 
-describe('Função "findById" - Retorna um filme do DB dado um "id" (models/movieModels)', () => {
+describe('Função "findById" - Retorna um filme do DB dado um "id"', () => {
   describe('Quando não existe um filme com o "id" passado:', async () => {
     before(() => {
       // "execute" é o resultado após fingirmos a conexão com o banco de dados

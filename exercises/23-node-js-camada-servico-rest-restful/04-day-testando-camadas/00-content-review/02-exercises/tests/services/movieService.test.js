@@ -53,3 +53,67 @@ describe('Função "create" - Insere um novo filme no BD (services/MovieService)
     });
   });
 });
+
+describe.only('Função "findById" - Retorna um filme do DB dado um "id"', () => {
+  describe('Quando não existe um filme com o "id" passado:', async () => {
+    before(async () => {
+      // ATTENTION - Eu poderia fazer isso?
+      // Ao testar, passou!
+      sinon.stub(MoviesModel, 'findById').resolves(null);
+
+      // Gabarito
+      // Não entendi o por quê de ter sido feito assim
+      // Por que ele simula o comportamento do "connection.execute" e não do findById?
+
+      // const execute = [[]];
+      // sinon.stub(connection, 'execute').resolves(execute);
+    });
+
+    after(async () => {
+      // ATTENTION - Eu poderia fazer isso?
+      MoviesModel.findById.restore();
+
+      // Gabarito
+      // connection.execute.restore();
+    });
+
+    it('- O retorno deve ser do tipo "null"', async () => {
+      const result = await MoviesService.findById(1);
+
+      expect(result).to.be.equal(null);
+    });
+  });
+
+  describe('Quando existe um filme com o "id" passado:', async () => {
+    const payloadMovie = {
+      id: 1,
+      title: 'Example Movie',
+      directedBy: 'Jane Dow',
+      releaseYear: 1999,
+    };
+
+    const MOVIE_ID = 1
+
+    // Simulo o comportamento da função "findById" na camada models
+    // E simulo o retorno dela, que no caso é um objeto: "payloadMovie"
+    before(async () => {
+      sinon.stub(MoviesModel, 'findById').resolves(payloadMovie);
+    });
+
+    after(async () => {
+      MoviesModel.findById.restore();
+    });
+
+    it('- O retorno deve ser do tipo "object"', async () => {
+      const result = await MoviesService.findById(MOVIE_ID);
+
+      expect(result).to.be.an('object');
+    });
+
+    it('- O retorno deve ter as propriedades: "id", "title", "directedBy", "releaseYear"', async () => {
+      const result = await MoviesService.findById(MOVIE_ID);
+
+      expect(result).to.have.all.keys('id', 'title', 'directedBy', 'releaseYear');
+    });
+  });
+})
