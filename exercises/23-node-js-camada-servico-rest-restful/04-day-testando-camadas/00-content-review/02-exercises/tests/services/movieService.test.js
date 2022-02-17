@@ -54,7 +54,7 @@ describe('Função "create" - Insere um novo filme no BD (services/MovieService)
   });
 });
 
-describe.only('Função "findById" - Retorna um filme do DB dado um "id"', () => {
+describe('Função "findById" - Retorna um filme do DB dado um "id"', () => {
   describe('Quando não existe um filme com o "id" passado:', async () => {
     before(async () => {
       // ATTENTION - Eu poderia fazer isso?

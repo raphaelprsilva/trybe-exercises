@@ -20,6 +20,8 @@ const create = async ({ title, directedBy, releaseYear }) => {
   };
 };
 
+// No gabarito, existem duas funçẽos "findById". Não entendi o por quê!
+// Dar uma olhadinha depois.
 const findById = async (id) => {
   const movie = await MoviesModel.findById(id);
 
