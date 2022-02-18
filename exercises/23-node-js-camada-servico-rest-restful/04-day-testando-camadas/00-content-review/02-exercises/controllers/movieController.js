@@ -20,6 +20,8 @@ const findById = async (req, res) => {
   if (!movie) {
     return res.status(404).send('Not found');
   }
+
+  return res.status(200).json(movie);
 };
 
 module.exports = {
