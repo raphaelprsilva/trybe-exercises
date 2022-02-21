@@ -1,3 +1,3 @@
-module.exports.createUser = require('./createUser');
-module.exports.getAllUsers = require('./getAllUsers');
+module.exports.joiError = require('./joiError');
+module.exports.getNonExistentRoute = require('./nonExistentRoute');
 module.exports.error = require('./error');
