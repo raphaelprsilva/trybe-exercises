@@ -1,14 +1,20 @@
 const userModel = require('../models/userModel');
 
-// Preciso validar se o usuário com o nome, sobrenome e email já existe
-// Preciso verificar se os dados inseridos são coerentes com as regras de negócio
-// QUESTION - A comunicação com middlewares serão feitos aqui???
-const create = async ({ firstName, lastName, email, password }) => {
-  // QUESTION - Teria mais alguma validação além das do joi?
-  // const isANewValidUser = ???
-  const newUser = await userModel.create({ firstName, lastName, email, password });
+// TODO - Antes de criar o usuário, verifique se o usuário com tais características já existe
+// Caso exista, não permita a criação de outro semelhante.
 
-  if (!newUser) return false;
+const create = async ({ firstName, lastName, email, password }) => {
+  const doesUserExists = await userModel.getByName({ firstName, lastName, email });
+  console.log('service - create - doesUserExists:', doesUserExists);
+
+  if (doesUserExists) return {
+    error: {
+      code: 'alreadyExists',
+      message: 'O usuário já existe',
+    },
+  }
+
+  const newUser = await userModel.create({ firstName, lastName, email, password });
 
   return newUser;
 };
@@ -21,13 +27,19 @@ const getAll = async () => {
   return users;
 };
 
-// QUESTION - O que validar aqui???
 const getById = async (id) => {
-  const user = await userModel.getById(id);
+  const doesUserExists = await userModel.getById(id);
 
-  if (!user) return false;
+  if (!doesUserExists) {
+    return {
+      error: {
+        code: 'notFound',
+        message: 'Usuário não encontrado',
+      },
+    };
+  }
 
-  return user;
+  return doesUserExists;
 };
 
 const update = async (id, { firstName, lastName, email, password }) => {

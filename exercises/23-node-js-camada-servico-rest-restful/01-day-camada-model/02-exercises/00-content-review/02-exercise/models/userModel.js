@@ -1,14 +1,6 @@
 const connection = require('../models/connection');
 
-// QUESTION - Onde seria um bom lugar para se colocar esse tipo de função?
-const formatUsersResult = (movies) => movies.map((movie) => ({
-  id: movie.id,
-  firstName: movie.first_name,
-  lastName: movie.last_name,
-  email: movie.email,
-}));
-
-// Funções que fazem conexão com o banco de dados
+const utils = require('../utils/utils');
 
 const create = async ({ firstName, lastName, email, password }) => {
   const query = 'INSERT INTO users_crud.users (first_name, last_name, email, password) VALUES(?, ?, ?, ?)';
@@ -16,7 +8,6 @@ const create = async ({ firstName, lastName, email, password }) => {
 
   console.log('userModel - create - result:', result);
 
-  // QUESTION - Como verificar o resultado inserido? Eu realmente preciso fazer isso?
   if (!result) return null;
 
   return {
@@ -35,7 +26,7 @@ const getAll = async () => {
   // QUESTION - essa é uma boa maneira de se fazer uma verificação? Se não, como seria?
   if (!users.length) return [];
 
-  return formatUsersResult(users);
+  return utils.formatUsersResult(users);
 };
 
 const getById = async (id) => {
@@ -43,11 +34,23 @@ const getById = async (id) => {
 
   const [user] = await connection.execute(query, [id]);
   console.log('Model - getById - user:', user);
-  console.log('!user.length:', !user.length);
 
   if (!user.length) return null;
 
-  const userFormated = formatUsersResult(user)[0];
+  const userFormated = utils.formatUsersResult(user)[0];
+
+  return userFormated;
+};
+
+const getByName = async ({ firstName, lastName, email }) => {
+  const query = 'SELECT * FROM users_crud.users WHERE first_name = ? AND last_name = ? AND email = ?';
+
+  const [user] = await connection.execute(query, [firstName, lastName, email]);
+  console.log('Model - getByName - user:', user);
+
+  if(!user.length) return null;
+
+  const userFormated = utils.formatUsersResult(user)[0];
 
   return userFormated;
 };
@@ -84,6 +87,7 @@ module.exports = {
   create,
   getAll,
   getById,
+  getByName,
   update,
   exclude,
 }
