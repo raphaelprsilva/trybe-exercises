@@ -8,7 +8,8 @@ module.exports = {
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
-        field: 'book_id',
+        field:
+          'book_id' /* Isso é para deixar explícito que o campo é em snake_case */,
       },
       name: {
         allowNull: false,
