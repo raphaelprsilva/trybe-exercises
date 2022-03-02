@@ -1,5 +1,6 @@
 'use strict';
 
+// Para criar a tabela => npx sequelize db:migrate
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable('Books', {
