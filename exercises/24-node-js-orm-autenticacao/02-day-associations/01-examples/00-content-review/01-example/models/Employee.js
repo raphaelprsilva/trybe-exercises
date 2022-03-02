@@ -16,6 +16,7 @@ module.exports = (sequelize, DataTypes) => {
   );
 
   Employee.associate = (models) => {
+    console.log('Employee.associate - models:', models);
     Employee.hasMany(models.Address, {
       foreignKey: 'employee_id',
       as: 'addresses',
