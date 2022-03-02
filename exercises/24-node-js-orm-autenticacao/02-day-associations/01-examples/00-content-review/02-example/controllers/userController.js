@@ -8,7 +8,16 @@ router.get('/:id', async (req, res) => {
     const { id } = req.params;
     const user = await User.findOne({
       where: { userId: id },
-      include: [{ model: Book, as: 'books', through: { attributes: [] } }],
+      // Eager Loading
+      include: [
+        {
+          model: Book /* Nome da Model */,
+          as: 'books' /* alias definido aqui e no UserBook.associate. Mude o nome e veja o resultado! */,
+          through: {
+            attributes: [],
+          } /* Faz com que as informações da tabela UserBook não seja trazida. Descomente e veja! */,
+        },
+      ],
     });
 
     console.log('user:', user);
