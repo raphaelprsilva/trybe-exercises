@@ -38,9 +38,13 @@ export function circle(radius: number): number {
   return Math.PI * (radius ** 2);
 }
 
-export function gritar(value: string|number) {
+export function gritar(value: string|number|boolean) {
   if (typeof value === 'string')
     return value.toUpperCase();
   if (typeof value === 'number')
     return value.toString().toUpperCase();
+}
+
+export const test = (myParam: number):number => {
+  return myParam;
 }
