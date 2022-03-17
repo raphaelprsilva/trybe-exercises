@@ -1,5 +1,5 @@
 {
-  "name": "app-exercise",
+  "name": "01-example",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,8 +9,8 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "dotenv": "^16.0.0",
-    "express": "^4.17.3"
+  "devDependencies": {
+    "@tsconfig/node14": "^1.0.1",
+    "@types/node": "^17.0.21"
   }
 }
