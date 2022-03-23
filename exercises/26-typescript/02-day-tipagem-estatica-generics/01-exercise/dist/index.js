@@ -1,29 +1,19 @@
 "use strict";
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
+// import Car, { Color, Directions } from './exercise-01';
 Object.defineProperty(exports, "__esModule", { value: true });
-const exercise_01_1 = __importStar(require("./exercise-01"));
-const car = new exercise_01_1.default('Volksvagen', exercise_01_1.Color.SILVER, 4);
-car.turnOn();
-car.turn(exercise_01_1.Directions.LEFT);
+exports.myFilter = void 0;
+// const car = new Car('Volksvagen', Color.SILVER, 4);
+// car.turnOn();
+// car.turn(Directions.LEFT);
+function myFilter(array, callback) {
+    let filterdArray = [];
+    for (let index = 0; index < array.length; index = index + 1) {
+        if (callback(array[index])) {
+            filterdArray.push(array[index]);
+        }
+    }
+    return filterdArray;
+}
+exports.myFilter = myFilter;
+const result = myFilter([1, 2, 3, 4, 5], (value) => value < 2);
+console.log(result);
